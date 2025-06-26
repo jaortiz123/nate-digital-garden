@@ -1,0 +1,26 @@
+---
+import '@fontsource/inter';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-50 text-gray-800 font-sans tracking-tight font-['Inter']">
+		<main class="max-w-4xl mx-auto px-4 py-12 md:py-20">
+			<slot />
+		</main>
+	</body>
+</html>
+

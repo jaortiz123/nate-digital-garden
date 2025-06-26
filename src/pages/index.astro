@@ -1,16 +1,58 @@
 ---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 
+const flagshipEssays = [
+  {
+    title: "The Claude Code Complete Guide: Learn Vibe-Coding & Agentic AI",
+    description: "Unlock Anthropic’s terminal-based AI. From 5-minute setup to multi-agent workflows.",
+    href: "https://natesnewsletter.substack.com/p/the-claude-code-complete-guide-learn"
+  },
+  {
+    title: "I Summarized Mary Meeker’s Incredible 340 Page 2025 AI Trends Deck",
+    description: "Here’s Mary’s Take, My Response, and What You Can Learn from the Queen of the Internet.",
+    href: "https://natesnewsletter.substack.com/p/i-summarized-mary-meekers-incredible"
+  },
+  {
+    title: "My Prompt Stack for Work: 16 Prompts in My AI Toolkit That Make Work a LOT Easier",
+    description: "Seriously, this is 66 pages of prompts, and yes you can figure out what you need. It covers your entire work stack.",
+    href: "https://natesnewsletter.substack.com/p/my-prompt-stack-for-work-16-prompts"
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+  title="Nate B. Jones | AI & Product" 
+  description="Writing with curiosity about product, tech, and life."
+>
+  <Hero />
+
+  <!-- Flagship Essays Section -->
+  <section>
+    <h2 class="mb-6">Flagship Essays</h2>
+    <div class="space-y-6">
+      {flagshipEssays.map(essay => (
+        <a href={essay.href} target="_blank" class="block p-6 border border-gray-200 rounded-lg hover:bg-gray-100 hover:no-underline transition-colors">
+          <h3 class="text-gray-900 mb-2">{essay.title}</h3>
+          <p class="text-gray-600">{essay.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Other Services Section -->
+  <section class="mt-16">
+    <h2 class="mb-6">Other Services & Live Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+       <div class="block p-6 border border-gray-200 rounded-lg">
+          <h3 class="text-gray-900 mb-2">Speaking & Workshops</h3>
+          <p class="text-gray-600">Engaging keynotes and hands-on workshops on AI strategy and agentic workflows.</p>
+        </div>
+        <div class="block p-6 border border-gray-200 rounded-lg">
+          <h3 class="text-gray-900 mb-2">Advisory</h3>
+          <p class="text-gray-600">Helping teams navigate the AI landscape, from product strategy to implementation.</p>
+        </div>
+    </div>
+  </section>
+</BaseLayout>
