@@ -1,48 +1,44 @@
 [
   {
-    "posts": [
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/i-summarized-mary-meekers-incredible",
-        "title": "I Summarized Mary Meeker's Incredible 340 Page 2025 AI Trends Deck—Here's Mary's\nTake, My Response, and What You Can Learn",
-        "description": "Yes, it's really 340 pages, and yes I really compressed it down, called out key\ntakeaways, and shared what you can actually learn about building in the…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!o-I8!,w_520,h_272,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76acdb57-59ab-463d-9fdb-604f901fbf00_1496x1352.jpeg"
-      },
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/your-pocket-guide-to-prompt-engineering",
-        "title": "Your Pocket Guide to Prompt Engineering: How to Get the Most from AI Models",
-        "description": "Ever wondered how to prompt a model, or how to get better at prompting an LLM? I\nmade this guide to be a single reference where you can learn the…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!xlNN!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c57c4a8-bd13-4636-b751-2186ac563d57_500x500.png"
-      },
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/ai-for-beginners-get-started-with",
-        "title": "AI for Beginners: Get Started with AI from Scratch",
-        "description": "I got a request to do an AI for Beginners post, so here it is! Share it with\nsomeone in your life who doesn't know where to get started with AI, and…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!o-I8!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76acdb57-59ab-463d-9fdb-604f901fbf00_1496x1352.jpeg"
-      },
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/from-0-to-5k-the-complete-simplified",
-        "title": "From 0 to 5K: The Complete Simplified Guide to Getting Going with AI",
-        "description": "A step-by-step system for turning AI into your daily partner—from spite-driven\ndevelopment to workflows that make everything from writing to analysis…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!NGJN!,w_520,h_272,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6478288a-3f34-4990-abda-d695b1d3b8a7_1024x1024.png"
-      },
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/the-ai-resume-survival-guide-for",
-        "title": "The AI Resume Survival Guide (for 2025 and Beyond)",
-        "description": "Resumes aren't doing their jobs anymore because of AI. So I wrote a reset for\nthe AI age: how to talk about AI well, how to use AI in resume creation…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!xlNN!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c57c4a8-bd13-4636-b751-2186ac563d57_500x500.png"
-      },
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/my-prompt-stack-for-work-16-prompts",
-        "title": "My Prompt Stack for Work: 16 Prompts In My AI Toolkit That Make Work a LOT\nEasier",
-        "description": "These prompts cover everything from presentations to product to analyzing\ncustomer data to smart tradeoff thinking—they show how I'm using smart prompts…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!NGJN!,w_320,h_213,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6478288a-3f34-4990-abda-d695b1d3b8a7_1024x1024.png"
-      },
-      {
-        "postUrl": "https://natesnewsletter.substack.comhttps://natesnewsletter.substack.com/p/the-ai-productivity-stack-27-tools",
-        "title": "The AI Productivity Stack: 27 Tools That Actually Deliver ROI",
-        "description": "Too many AI tools promise miracles but waste your time. After testing 100+\noptions, I've identified the 27 that genuinely boost productivity for…",
-        "imageUrl": "https://substackcdn.com/image/fetch/$s_!CtdR!,w_520,h_272,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec80bbaa-41b4-4f14-880d-86304d7ed62e_1024x1024.png"
-      }
-    ]
+    "postUrl": "https://natesnewsletter.substack.com/p/i-summarized-mary-meekers-incredible",
+    "title": "I Summarized Mary Meeker's Incredible 340 Page 2025 AI Trends Deck—Here's Mary's\nTake, My Response, and What You Can Learn",
+    "description": "Yes, it's really 340 pages, and yes I really compressed it down, called out key\ntakeaways, and shared what you can actually learn about building in the…",
+    "imageUrl": null
+  },
+  {
+    "postUrl": "https://natesnewsletter.substack.com/p/your-pocket-guide-to-prompt-engineering",
+    "title": "Your Pocket Guide to Prompt Engineering: How to Get the Most from AI Models",
+    "description": "Ever wondered how to prompt a model, or how to get better at prompting an LLM? I\nmade this guide to be a single reference where you can learn the…",
+    "imageUrl": null
+  },
+  {
+    "postUrl": "https://natesnewsletter.substack.com/p/ai-for-beginners-get-started-with",
+    "title": "AI for Beginners: Get Started with AI from Scratch",
+    "description": "I got a request to do an AI for Beginners post, so here it is! Share it with\nsomeone in your life who doesn't know where to get started with AI, and…",
+    "imageUrl": null
+  },
+  {
+    "postUrl": "https://natesnewsletter.substack.com/p/from-0-to-5k-the-complete-simplified",
+    "title": "From 0 to 5K: The Complete Simplified Guide to Getting Going with AI",
+    "description": "A step-by-step system for turning AI into your daily partner—from spite-driven\ndevelopment to workflows that make everything from writing to analysis…",
+    "imageUrl": null
+  },
+  {
+    "postUrl": "https://natesnewsletter.substack.com/p/the-ai-resume-survival-guide-for",
+    "title": "The AI Resume Survival Guide (for 2025 and Beyond)",
+    "description": "Resumes aren't doing their jobs anymore because of AI. So I wrote a reset for\nthe AI age: how to talk about AI well, how to use AI in resume creation…",
+    "imageUrl": null
+  },
+  {
+    "postUrl": "https://natesnewsletter.substack.com/p/my-prompt-stack-for-work-16-prompts",
+    "title": "My Prompt Stack for Work: 16 Prompts In My AI Toolkit That Make Work a LOT\nEasier",
+    "description": "These prompts cover everything from presentations to product to analyzing\ncustomer data to smart tradeoff thinking—they show how I'm using smart prompts…",
+    "imageUrl": null
+  },
+  {
+    "postUrl": "https://natesnewsletter.substack.com/p/the-ai-productivity-stack-27-tools",
+    "title": "The AI Productivity Stack: 27 Tools That Actually Deliver ROI",
+    "description": "Too many AI tools promise miracles but waste your time. After testing 100+\noptions, I've identified the 27 that genuinely boost productivity for…",
+    "imageUrl": null
   }
 ]
