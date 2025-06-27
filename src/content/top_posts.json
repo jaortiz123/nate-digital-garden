@@ -1,0 +1,24 @@
+---
+// src/components/TopPosts.astro
+import postsData from '../content/top_posts.json';
+
+// Keep only the first N posts
+const MAX_POSTS = 6;
+const topPosts = postsData.slice(0, MAX_POSTS);
+---
+<section class="mx-auto max-w-4xl py-16">
+  <h2 class="text-3xl font-bold mb-8">Flagship Essays</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {topPosts.map(post => (
+      <a href={post.postUrl} target="_blank" rel="noopener noreferrer" class="block rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden group shadow-sm hover:shadow-lg">
+        {post.imageUrl && (
+          <img src={post.imageUrl} alt={`Cover image for ${post.title}`} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+        )}
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight group-hover:text-blue-600">{post.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{post.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
