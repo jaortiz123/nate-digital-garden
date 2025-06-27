@@ -1,24 +1,44 @@
 ---
 // src/components/TopPosts.astro
-import postsData from '../content/top_posts.json';
+import posts from '../content/top_posts.json';
 
-// Keep only the first N posts
-const MAX_POSTS = 14;
-const topPosts = postsData.slice(0, MAX_POSTS);
+const MAX_POSTS = 6;
+const topPosts = posts.slice(0, MAX_POSTS);
 ---
-<section class="mx-auto max-w-4xl py-16">
-  <h2 class="text-3xl font-bold mb-8">Flagship Essays</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<section id="flagship-essays" class="mx-auto max-w-5xl py-16 px-4">
+  <h2 class="text-3xl text-center mb-12">Latest Intelligence</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {topPosts.map(post => (
-      <a href={post.postUrl} target="_blank" rel="noopener noreferrer" class="block rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden group shadow-sm hover:shadow-lg">
-        {post.imageUrl && (
-          <img src={post.imageUrl} alt={`Cover image for ${post.title}`} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-        )}
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight group-hover:text-blue-600">{post.title}</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">{post.description}</p>
+      <a href={post.postUrl} target="_blank" rel="noopener noreferrer" class="nav-card group">
+        <div class="relative z-10">
+          <h3 class="text-lg mb-2 group-hover:text-electric-blue transition-colors">{post.title}</h3>
+          <p class="text-sm">{post.description}</p>
         </div>
       </a>
     ))}
   </div>
 </section>
+
+<style>
+  .nav-card {
+    background: linear-gradient(145deg, rgba(99, 102, 241, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem 1.5rem; /* More space at the top for the pseudo-element */
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+  .nav-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--electric-blue);
+  }
+  .nav-card::before {
+    content: '> ';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    color: var(--neon-green);
+    font-family: 'JetBrains Mono', monospace;
+  }
+</style>
