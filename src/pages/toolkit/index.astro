@@ -1,0 +1,72 @@
+---
+import Layout        from '@/layouts/Layout.astro';
+import Button        from '@/components/Button.astro';
+import AccordionItem from '@/components/AccordionItem.astro';
+---
+<Layout>
+  <section class="py-24 text-center">
+    <h1 class="text-5xl md:text-6xl font-grotesk font-black mb-16">The Toolkit</h1>
+
+    <!-- accessible accordion -->
+    <div class="max-w-2xl mx-auto text-left">
+      <AccordionItem label="My Guide to AI & Careers">
+        <p class="mb-4">
+          I built a <strong>30-minute video guide</strong> so you can start thinking seriously about how&nbsp;AI will shape
+          your career—&nbsp;it's the length of one episode of <em>What We Do in the Shadows</em>.<br/><br/>
+          You'll leave with the macro trends and a strategy lens for spotting opportunity, not hype.<br/><br/>
+          <strong>If you finish the video and want to go deeper,</strong> you can book a private 1-on-1 session with me to tailor the insights to your situation.
+        </p>
+
+        <!-- primary CTA: purchase the guide -->
+        <Button href="https://natebjones.com/guide" variant="primary">Watch the guide →</Button>
+
+        <!-- secondary CTA: upsell to 1-on-1 -->
+        <Button href="https://natebjones.com/products/ai-1-on-1"
+                variant="secondary"
+                class="mt-3">
+          Book a 1:1 deep-dive →
+        </Button>
+      </AccordionItem>
+
+      <AccordionItem label="Get My AI Prompts">
+        <p class="mb-4">
+          50-page prompt library I update weekly—battle-tested for product,
+          marketing & strategy work.
+        </p>
+        <Button href="https://natebjones.com/products/50-pages-of-prompts" variant="primary">Grab the prompts →</Button>
+      </AccordionItem>
+
+      <AccordionItem label="AI Robot Club">
+        <p class="mb-4">
+          Twice-monthly small-group sessions where we build & ship AI toys
+          together. Zero spectators.
+        </p>
+        <Button href="https://natebjones.com/club" variant="secondary">Join the club →</Button>
+      </AccordionItem>
+
+      <AccordionItem label="My AI Projects">
+        <p class="mb-4">
+          A living portfolio of experiments—everything from
+          <em>GimmeJuice.AI</em> to <em>Tracker.Vote</em>.
+        </p>
+        <Button href="/#ai-projects" variant="primary">See the projects →</Button>
+      </AccordionItem>
+
+      <AccordionItem label="Get in touch">
+        <p class="mb-4">
+          Need a product strategy sprint or a keynote on pragmatic AI?
+          Reach me directly—no form spam.
+        </p>
+        <Button href="/#contact" variant="secondary">Email Nate →</Button>
+      </AccordionItem>
+
+      <AccordionItem label="My Story">
+        <p class="mb-4">
+          20 years in Southeast Asia, LEGO builds, VP Product at Drift &
+          Amazon—here's the long version.
+        </p>
+        <Button href="/about" variant="secondary">Read the story →</Button>
+      </AccordionItem>
+    </div>
+  </section>
+</Layout>

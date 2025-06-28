@@ -1,0 +1,37 @@
+---
+// src/pages/projects.astro
+import Layout from '../layouts/Layout.astro';
+
+const siteTitle = "Projects | Nate B. Jones";
+const projects = [
+  { name: "AI Resume Survival Guide", description: "A practical guide to future-proofing your career with AI.", url: "#" },
+  { name: "Prompt Engineering Pocket Guide", description: "A single reference for getting the most from AI models.", url: "#" },
+  { name: "AI Robot Club", description: "Hands-on AI workshops and community.", url: "#" },
+];
+---
+<Layout title={siteTitle}>
+  <main>
+    <section class="hero-section">
+      <div class="container mx-auto text-center">
+        <h1 class="max-w-4xl mx-auto">Projects</h1>
+        <p class="text-xl md:text-2xl mt-6 max-w-3xl mx-auto">
+          A selection of my most impactful AI and product strategy projects.
+        </p>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="container mx-auto">
+        <h2 class="section-header mb-10 text-center">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map(project => (
+            <a href={project.url} class="card card-editorial group">
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-electric-accent transition-colors">{project.name}</h3>
+              <p class="text-secondary flex-grow">{project.description}</p>
+              <span class="mt-4 font-bold text-electric-accent">Learn More →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

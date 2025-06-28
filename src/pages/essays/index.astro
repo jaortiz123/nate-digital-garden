@@ -1,0 +1,33 @@
+---
+// src/pages/essays/index.astro
+import Layout from '../../layouts/Layout.astro';
+import topPosts from '../../content/top_posts.json';
+
+const siteTitle = "Essays | Nate B. Jones";
+---
+<Layout title={siteTitle}>
+  <main>
+    <section class="hero-section">
+      <div class="container mx-auto text-center">
+        <h1 class="max-w-4xl mx-auto">All Essays</h1>
+        <p class="text-xl md:text-2xl mt-6 max-w-3xl mx-auto">
+          Essays on AI, product strategy, and building things that matter.
+        </p>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="container mx-auto">
+        <h2 class="section-header mb-10 text-center">Essay Archive</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {topPosts.map(post => (
+            <a href={post.postUrl} target="_blank" class="card card-editorial group">
+              <h3 class="text-2xl font-bold mb-2 group-hover:text-electric-accent transition-colors">{post.title}</h3>
+              <p class="text-secondary flex-grow">{post.description}</p>
+              <span class="mt-4 font-bold text-electric-accent">Read More →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

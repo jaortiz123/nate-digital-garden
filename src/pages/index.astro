@@ -1,16 +1,85 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import TopPosts from '../components/TopPosts.astro';
+// src/pages/index.astro
+import Layout from '@/layouts/Layout.astro';
+import Button from '@/components/Button.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Card from '@/components/Card.astro';
+import SubstackCard from '@/components/SubstackCard.astro';
+import topPosts from '@/content/top_posts.json';
+
+const toolkitLinks = [
+  { name: "My Guide to AI & Careers", url: "/toolkit" },
+  { name: "Get My AI Prompts", url: "/toolkit" },
+  { name: "AI Robot Club", url: "/toolkit" },
+  { name: "My AI Projects", url: "/toolkit" },
+  { name: "My Story", url: "/toolkit" },
+  { name: "Get In Touch", url: "/toolkit" },
+];
 ---
+<Layout>
+  <main>
+    <!-- 1. Hero: Value Proposition -->
+    <section class="text-center py-24 md:py-32 relative">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
+        <h1 class="hero-title font-grotesk font-black text-5xl sm:text-6xl lg:text-7xl leading-tight tracking-tight max-w-5xl mx-auto">
+          Clarity in the Age of AI Chaos
+        </h1>
+        <p class="mt-6 text-lg text-secondary max-w-xl mx-auto">
+          Exploring AI, strategy, and how to build meaningful things. I write essays to think better and share what I learn.
+        </p>
+        <div class="mt-14">
+          <Button href="#posts" variant="primary">Explore Top Posts</Button>
+        </div>
+      </div>
+    </section>
 
-<BaseLayout
-  title="Nate B. Jones | AI & Product"
-  description="Writing with curiosity about product, tech, and life."
->
-  <Hero />
-  <TopPosts />
-  
-  <!-- Other services can be added back here if needed -->
+    <!-- 2. Top Posts Section -->
+    <section id="posts" class="py-20 sm:py-28">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
+        <div class="text-center">
+          <SectionHeading>Top Posts</SectionHeading>
+        </div>
+        <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {topPosts.slice(0, 3).map((post: any) => <Card {...post} />)}
+        </div>
+      </div>
+    </section>
 
-</BaseLayout>
+    <!-- 3. Simple Product/Link Grid -->
+    <section id="toolkit" class="py-16 md:py-24">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
+        <div class="text-center">
+          <SectionHeading>The Toolkit</SectionHeading>
+        </div>
+        <div class="mt-12 flex flex-wrap justify-center gap-6">
+          {toolkitLinks.map(link => (
+            <Button href={link.url} variant="primary">{link.name}</Button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Email Signup (The Earned Ask) -->
+    <section id="subscribe" class="py-16 md:py-24">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-10">
+            <div class="text-center">
+                <SectionHeading>Want this thinking delivered daily?</SectionHeading>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-secondary">Subscribe to get my daily AI briefing. Zero fluff, maximum signal.</p>
+            </div>
+            <div class="mt-10">
+                <!-- SubstackCard does not need changes, it contains its own form -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Professional Bio (Final Trust Builder) -->
+    <section id="bio" class="py-16 md:py-24">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <SectionHeading>About Nate</SectionHeading>
+          <p class="mt-6 text-xl text-secondary">I help teams navigate ambiguity and leverage AI to build better products, faster. My talks focus on actionable frameworks for product strategy, AI-native workflows, and building high-performance teams.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

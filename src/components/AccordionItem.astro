@@ -1,0 +1,71 @@
+---
+/**
+ * Props:
+ *  label (string)  – the row title
+ *  slot           – content shown when expanded
+ *
+ *  Each item uses `<details>` so it's keyboard-ready &
+ *  automatically collapses siblings (thanks to CSS).
+ */
+const { label } = Astro.props;
+---
+
+<details class="group mb-3 last:mb-0">
+  <summary class="accordion-button">
+    {label}
+    <svg class="w-4 h-4 shrink-0 transition-transform group-open:rotate-180"
+         viewBox="0 0 20 20" fill="currentColor">
+      <path d="M6 8l4 4 4-4" />
+    </svg>
+  </summary>
+
+  <div class="panel px-6 py-5 text-[15px] leading-6 bg-white border-2 border-black border-t-0">
+    <slot />
+  </div>
+</details>
+
+<style>
+  /* Hide default marker */
+  details summary::-webkit-details-marker { 
+    display: none; 
+  }
+  
+  /* Smooth open animation */
+  details[open] .panel { 
+    animation: fade 240ms ease; 
+  }
+  
+  @keyframes fade { 
+    from { opacity: 0; transform: translateY(-4px); } 
+    to { opacity: 1; } 
+  }
+  
+  /* Button styling for summary */
+  .accordion-button {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.875rem 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 3px solid #121212;
+    background: white;
+    color: var(--brand-blue);
+    box-shadow: 6px 6px 0 #121212;
+    transition: all 0.15s ease-out;
+  }
+  
+  .accordion-button:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 #121212;
+  }
+  
+  details[open] .accordion-button {
+    background: var(--brand-blue);
+    color: white;
+  }
+</style>

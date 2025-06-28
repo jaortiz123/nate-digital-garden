@@ -1,11 +1,11 @@
 ---
 ---
-<section class="min-h-screen flex flex-col items-center justify-center text-center p-4" style="background: var(--hero-gradient);">
+<section class="hero-section min-h-screen flex flex-col items-center justify-center text-center p-4" style="background: var(--hero-gradient);">
   <div class="max-w-3xl">
-    <h1 class="font-black text-white" style="font-family: 'Orbitron', sans-serif;">
+    <h1 class="hero-title">
       A Compass for the Age of AI
     </h1>
-    <p class="text-lg md:text-xl mt-4 max-w-xl mx-auto" style="color: var(--text-secondary);">
+    <p class="text-lg md:text-xl mt-4 max-w-xl mx-auto body-text">
       Product graybeard helping 300K+ builders navigate the tech maze. From someone who's built products for 100M+ users.
     </p>
     <a href="#flagship-essays" class="inline-block mt-8 px-8 py-3 rounded-md font-bold text-deep-navy" style="background-color: var(--electric-blue); font-family: 'Orbitron', sans-serif;">
@@ -13,3 +13,40 @@
     </a>
   </div>
 </section>
+
+<style>
+.hero-section {
+  min-height: 100vh;
+  background: var(--hero-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+.hero-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+}
+</style>

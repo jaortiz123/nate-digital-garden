@@ -1,0 +1,65 @@
+---
+// src/components/ProductCard.astro
+interface Props {
+  title: string;
+  payoff: string;
+  price: string;
+  cta: string;
+  url: string;
+  socialProof?: string;
+}
+const { title, payoff, price, cta, url, socialProof } = Astro.props;
+---
+<div class="product-card">
+  <div class="flex justify-between items-start mb-4">
+    <h3 class="text-xl font-bold">{title}</h3>
+    <span class="price-tag">${price}</span>
+  </div>
+  <p class="payoff-line">{payoff}</p>
+  <div class="flex-grow"></div>
+  {socialProof && <div class="social-proof">{socialProof}</div>}
+  <a href={url} target="_blank" class="btn btn-primary w-full text-center mt-6">
+    {cta}
+  </a>
+</div>
+
+<style>
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid rgba(122, 122, 122, 0.2); /* Faint border */
+    border-top: 4px solid var(--electric-accent);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    transition: all 0.2s ease-out;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 104, 255, 0.5);
+    border-top-color: var(--electric-accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+  .price-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    background-color: var(--text-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+  }
+  .payoff-line {
+    color: #444;
+    font-size: 1.1rem;
+    min-height: 3.3rem; /* Prevents layout shift */
+  }
+  .social-proof {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--support-stroke);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+  }
+</style>

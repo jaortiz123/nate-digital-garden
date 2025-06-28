@@ -5,9 +5,9 @@ import posts from '../content/top_posts.json';
 const MAX_POSTS = 6;
 const topPosts = posts.slice(0, MAX_POSTS);
 ---
-<section id="flagship-essays" class="mx-auto max-w-5xl py-16 px-4">
+<section id="flagship-essays" class="nav-hub">
   <h2 class="text-3xl text-center mb-12">Latest Intelligence</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="essay-grid">
     {topPosts.map(post => (
       <a href={post.postUrl} target="_blank" rel="noopener noreferrer" class="nav-card group">
         <div class="relative z-10">
@@ -20,25 +20,51 @@ const topPosts = posts.slice(0, MAX_POSTS);
 </section>
 
 <style>
-  .nav-card {
-    background: linear-gradient(145deg, rgba(99, 102, 241, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    border-radius: 12px;
-    padding: 2.5rem 1.5rem 1.5rem; /* More space at the top for the pseudo-element */
-    position: relative;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+.nav-hub {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+@media (min-width: 768px) {
+  .nav-hub {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .nav-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--electric-blue);
+}
+@media (min-width: 1024px) {
+  .nav-hub {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .nav-card::before {
-    content: '> ';
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
-    color: var(--neon-green);
-    font-family: 'JetBrains Mono', monospace;
-  }
+}
+.essay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.nav-card {
+  background: var(--card-gradient);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.nav-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--electric-blue);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.nav-card::before {
+  content: '> ';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: var(--neon-green);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+}
 </style>

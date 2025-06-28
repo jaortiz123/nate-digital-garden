@@ -1,0 +1,15 @@
+---
+// src/components/Card.astro
+interface Props {
+  postUrl: string;
+  title: string;
+  description: string;
+}
+const { postUrl, title, description } = Astro.props;
+---
+<a href={postUrl} target="_blank" rel="noopener noreferrer"
+   class="block p-6 md:p-8 border-brutal border-ink bg-white transition
+        hover:-translate-y-1 hover:border-brand-green group shadow-[6px_6px_0_0_#000]">
+  <h3 class="font-grotesk text-2xl font-black mb-4 line-clamp-3 group-hover:text-brand-green">{title}</h3>
+  <p class="text-secondary line-clamp-4 group-hover:text-brand-green/80">{description}</p>
+</a>

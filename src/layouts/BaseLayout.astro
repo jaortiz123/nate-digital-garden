@@ -1,26 +1,38 @@
 ---
-import '@fontsource/inter';
 import '../styles/global.css';
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
 ---
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body class="bg-gray-50 text-gray-800 font-sans tracking-tight font-['Inter']">
-		<main class="max-w-4xl mx-auto px-4 py-12 md:py-20">
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header style="max-width: 80rem; margin: 0 auto; padding: 1.5rem 1rem;">
+      <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" style="font-family: 'Orbitron', sans-serif; color: var(--electric-blue); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; text-decoration: none;">Nate B. Jones</a>
+        <div style="display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 600; text-transform: uppercase;">
+          <a href="/essays" style="color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Essays</a>
+          <a href="/about" style="color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">About</a>
+          <a href="/projects" style="color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Projects</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer style="text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+      <p style="font-size: 0.75rem; color: var(--text-secondary);">© {new Date().getFullYear()} Nate B. Jones. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
 
