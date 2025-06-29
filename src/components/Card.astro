@@ -4,12 +4,59 @@ interface Props {
   postUrl: string;
   title: string;
   description: string;
+  date?: string;
+  readTime?: string;
 }
-const { postUrl, title, description } = Astro.props;
+const { postUrl, title, description, date = "Dec 15, 2024", readTime = "8 min read" } = Astro.props;
 ---
-<a href={postUrl} target="_blank" rel="noopener noreferrer"
-   class="block p-6 md:p-8 border-brutal border-ink bg-white transition
-        hover:-translate-y-1 hover:border-brand-green group shadow-[6px_6px_0_0_#000]">
-  <h3 class="font-grotesk text-2xl font-black mb-4 line-clamp-3 group-hover:text-brand-green">{title}</h3>
-  <p class="text-secondary line-clamp-4 group-hover:text-brand-green/80">{description}</p>
+
+<a href={postUrl} target="_blank" rel="noopener noreferrer" class="block group h-full">
+  <!-- LAYER 1 - outer main color border -->
+  <div 
+    class="relative rounded-[26px] p-[3px] transition-all duration-300 group-hover:brightness-110 h-full"
+    style={{ 
+      background: '#2c7485'
+    }}
+  >
+    <!-- LAYER 2 - thin darker border -->
+    <div 
+      class="rounded-[24px] p-[1px] h-full"
+      style={{ 
+        background: '#1c4969'
+      }}
+    >
+      <!-- LAYER 3 - the v55 glow effect we perfected -->
+      <div
+        class="relative w-full rounded-[23px] transition-all duration-300 h-full flex flex-col"
+        style={{
+          background: `linear-gradient(#1a2332, #1a2332) padding-box,
+                      linear-gradient(
+                        90deg,
+                        transparent 0%,
+                        transparent 15%,
+                        rgba(34, 211, 238, 0.9) 30%,
+                        rgba(34, 211, 238, 0.9) 70%,
+                        transparent 85%,
+                        transparent 100%
+                      ) top/100% 30px no-repeat border-box`,
+          border: '2px solid transparent',
+        }}
+      >
+        <div class="p-8 flex flex-col gap-4 flex-grow min-h-0">
+          <time class="text-[#22d3ee] text-sm font-medium">{date}</time>
+          <h3 class="text-white text-[1.75rem] font-bold leading-tight group-hover:text-cyan-100 transition-colors duration-200 line-clamp-2">{title}</h3>
+          <p class="text-[#94a3b8] text-base leading-relaxed line-clamp-3 flex-grow">{description}</p>
+          <div class="flex items-center justify-between text-slate-400 text-sm pt-2 mt-auto">
+            <span>{readTime}</span>
+            <span class="inline-flex items-center gap-1.5 font-medium text-[#22d3ee] group-hover:text-cyan-300 transition-colors duration-200">
+              Read more
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </a>
