@@ -1,5 +1,11 @@
 [
   {
+    "postUrl": "https://natesnewsletter.substack.com/p/agi-meltdown-claudes-vending-machine",
+    "title": "AGI Meltdown: Claude’s Vending-Machine Disaster Exposes the Real Limits of\nArtificial Intelligence",
+    "description": "Claude’s vending-machine meltdown proves today’s “smart” AI still fumbles basic\nbusiness—and why your job is safer than the hype suggests.",
+    "imageUrl": null
+  },
+  {
     "postUrl": "https://natesnewsletter.substack.com/p/the-complete-ai-learning-roadmap",
     "title": "The Complete AI Learning Roadmap for 2025: Go From Zero to ChatGPT-5 Ready\nbefore ChatGPT-5 Comes Out!",
     "description": "I wrote the AI Guide I wish I had starting out: fresh GPT-5 coverage, no-fluff\nexplanations, a curated learning toolkit, and the influencers…",
@@ -63,12 +69,6 @@
     "postUrl": "https://natesnewsletter.substack.com/p/beyond-the-perfect-prompt-the-definitive",
     "title": "Beyond the Perfect Prompt: The Definitive Guide to Context Engineering—The Next\nRevolution in Artificial Intelligence",
     "description": "Why context engineering will define how intelligent systems behave—and why you\nneed to understand it now in order to understand AI agents, the evolution…",
-    "imageUrl": null
-  },
-  {
-    "postUrl": "https://natesnewsletter.substack.com/p/too-helpful-to-think-the-hidden-cost",
-    "title": "Too Helpful to Think: The Hidden Cost of AI In Your Major Life Decisions",
-    "description": "This post has one mission: Help you make a meaningfully better choice on your\nnext big life decision (you make about 10 a year). Specific prompts, why…",
     "imageUrl": null
   }
 ]
