@@ -1,6 +1,7 @@
 ---
 // src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 
 const siteTitle = "About Nate B. Jones";
 ---
@@ -8,18 +9,20 @@ const siteTitle = "About Nate B. Jones";
   <main>
     <section class="hero-section">
       <div class="container mx-auto text-center">
-        <h1 class="max-w-4xl mx-auto">About Nate B. Jones</h1>
-        <p class="text-xl md:text-2xl mt-6 max-w-3xl mx-auto">
+        <h1 class="hero-title font-geograph-black text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mx-auto max-w-4xl">
+          About Nate B. Jones
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
           Product leader, AI builder, and essayist. I help teams and individuals navigate ambiguity and leverage AI to build better products, faster.
         </p>
       </div>
     </section>
     <section class="py-20">
-      <div class="container mx-auto">
-        <h2 class="section-header mb-10 text-center">Bio</h2>
+      <div class="container mx-auto text-center">
+        <SectionHeading>Bio</SectionHeading>
         <div class="card card-editorial max-w-3xl mx-auto">
-          <p class="text-lg mb-4">Nate has shipped products for 100M+ users at Amazon and Drift. He writes about AI, product strategy, and building high-performance teams. His work focuses on actionable frameworks and real-world results.</p>
-          <p class="text-lg">He is available for speaking, workshops, and consulting. <a href="mailto:nate@example.com" class="text-electric-accent font-bold">Get in touch →</a></p>
+          <p class="text-secondary leading-relaxed mb-6">Nate has shipped products for 100M+ users at Amazon and Drift. He writes about AI, product strategy, and building high-performance teams. His work focuses on actionable frameworks and real-world results.</p>
+          <p class="text-secondary leading-relaxed">He is available for speaking, workshops, and consulting. <a href="mailto:nate@example.com" class="text-cyan-400 font-bold">Get in touch →</a></p>
         </div>
       </div>
     </section>

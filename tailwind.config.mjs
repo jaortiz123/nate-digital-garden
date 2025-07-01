@@ -5,20 +5,45 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: { 
-          blue: '#003087',       // Seahawks '76 primary
-          green: '#046A38',      // micro-accent
+        navy: '#050B14',
+        'card-navy': '#0A1220',
+        'line-cyan': '#23C9FF',
+        fg: '#E9F1FF',
+        'fg-muted': '#A8B8D9',
+        secondary: '#A8B8D9',
+        'glow-cyan-100': '#23C9FF44',
+        'glow-cyan-300': '#23C9FFAA',
+        // Dark theme colors matching the reference
+        'card-dark': '#0f172a',     // Very dark navy for card backgrounds
+        'card-darker': '#020617',   // Even darker for main background
+        'glow-cyan': {
+          300: '#67e8f9',           // Light cyan for glows
+          400: '#22d3ee',           // Main cyan
+          500: '#06b6d4',           // Darker cyan
         },
-        canvas: '#F5F5F5',        // ultra-light grey background
-        ink:  { DEFAULT: '#000000' },     /* ← for neo-brutalist outlines */
+        'text-muted': '#64748b',    // Muted text color
+        'border-glow': '#0891b2',   // Border glow color
       },
       fontFamily: {
-        grotesk: ['"Clash Display"', '"Space Grotesk"', '"Scto Grotesk A"', 'sans-serif'], // fallback chain
+        sans: ['Geograph', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        geograph: ['Geograph', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // Hanken Grotesk is the new primary display font
+        display: ['"Hanken Grotesk"', 'Inter', 'sans-serif'],
       },
-      borderWidth: { brutal: '4px' },       /* 4 px outline utility */
+      boxShadow: {
+        // Custom utility for the inner card bevel
+        bevel: 'inset 0 0 0 1px var(--tw-shadow-color)',
+        'glow-cyan': '0 0 20px rgba(34, 211, 238, 0.3)',
+        'glow-cyan-lg': '0 0 40px rgba(34, 211, 238, 0.4)',
+      },
+      borderRadius: {
+        // Custom utility for the outer card bevel
+        bevel: '22px',
+      },
+      backdropBlur: {
+        'xs': '2px',
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'), // For truncating card titles
-  ],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

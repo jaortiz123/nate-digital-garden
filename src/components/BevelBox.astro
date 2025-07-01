@@ -1,0 +1,33 @@
+---
+// src/components/BevelBox.astro
+interface Props {
+  class?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
+}
+const { class: className, href, target, rel } = Astro.props;
+
+// Base classes for the bevel effect
+const baseClasses = "group relative block rounded-bevel overflow-hidden";
+const glowLayer = "absolute inset-0 bg-gradient-to-br from-glow-cyan-300/50 via-transparent to-transparent rounded-bevel pointer-events-none group-hover:from-glow-cyan-300/90 transition-all duration-300";
+const contentBox = "relative z-10 bg-card-navy rounded-[18px] p-6 h-full shadow-bevel shadow-glow-cyan-100/60 group-hover:shadow-glow-cyan-100 transition-shadow duration-300";
+
+// If href is provided, render as a link, otherwise as a div
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag 
+  href={href} 
+  target={target} 
+  rel={rel}
+  class:list={[baseClasses, className]}
+>
+  <!-- Glow/Bevel Layer -->
+  <div class={glowLayer}></div>
+
+  <!-- Inner Content Box -->
+  <div class={contentBox}>
+    <slot />
+  </div>
+</Tag>

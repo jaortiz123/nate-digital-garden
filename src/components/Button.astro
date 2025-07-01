@@ -2,35 +2,24 @@
 // src/components/Button.astro
 interface Props {
   href: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'outline';
   class?: string;
-  target?: string;
 }
-const { href, variant = 'outline', class: className, target } = Astro.props;
+const { href, variant = 'primary', class: className } = Astro.props;
 
-// Defines the color schemes for each button type as per your directive.
+// Define variants using Tailwind classes
+// Make the button bigger: increase px, py, font size, and border radius
+const baseClasses = "relative inline-block px-12 py-6 text-2xl font-bold tracking-wide rounded-bevel transition-all duration-200 group font-geograph-bold";
+
 const variantClasses = {
-  primary: "bg-brand-blue text-white",      // Seahawks blue face, white text
-  secondary: "bg-white text-brand-blue", // White face, blue text
-  outline: "bg-white text-black",         // White face, black text
+  primary: "bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-900 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2",
+  outline: "border-2 border-cyan-400/60 text-cyan-400 hover:border-cyan-400 hover:bg-cyan-400/10 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 transition-colors",
 };
 ---
-<a
-  href={href}
-  class:list={[
-    "inline-block border-3 border-black p-3.5 px-8 font-bold uppercase tracking-wider transition-all duration-150 ease-out",
-    "shadow-[6px_6px_0_#121212] hover:shadow-[3px_3px_0_#121212] hover:translate-x-[3px] hover:translate-y-[3px]",
-    variantClasses[variant],
-    className
-  ]}
-  target={target}
->
+<a href={href} class:list={[baseClasses, variantClasses[variant], className]}>
+  <!-- Shadow/glow effect for primary variant -->
+  {variant === 'primary' && (
+    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-200 -z-10"></div>
+  )}
   <slot />
 </a>
-
-<style>
-  /* A minor tweak to ensure border-width is consistent */
-  .border-3 {
-    border-width: 3px;
-  }
-</style>

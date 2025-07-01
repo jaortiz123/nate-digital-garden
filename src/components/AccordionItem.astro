@@ -52,20 +52,35 @@ const { label } = Astro.props;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border: 3px solid #121212;
-    background: white;
-    color: var(--brand-blue);
-    box-shadow: 6px 6px 0 #121212;
-    transition: all 0.15s ease-out;
+    border: 3px solid theme("colors.cyan.400");
+    background: theme("colors.card-navy");
+    color: theme("colors.cyan.100");
+    box-shadow: 0 4px 20px rgba(34,211,238,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: theme("borderRadius.bevel");
   }
   
   .accordion-button:hover {
-    transform: translate(3px, 3px);
-    box-shadow: 3px 3px 0 #121212;
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(34,211,238,0.4);
   }
   
   details[open] .accordion-button {
-    background: var(--brand-blue);
-    color: white;
+    background: theme("colors.cyan.400");
+    color: theme("colors.navy");
+  }
+  .accordion-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34,211,238,0.6);
+  }
+  
+  /* Panel styling */
+  .panel {
+    padding: 1rem 1.5rem;
+    background: theme("colors.card-dark");
+    border: 2px solid theme("colors.cyan.400");
+    border-top: none;
+    border-radius: 0 0 theme("borderRadius.bevel") theme("borderRadius.bevel");
+    color: theme("colors.fg");
   }
 </style>

@@ -1,35 +1,21 @@
 /* src/styles/global.css */
 /* Import the new primary font for headlines */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/fontsource-clash-display/4.0.8/variable.css");
-@import url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85648/scto-grotesk-a.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800;900&family=Inter:wght@400&display=swap');
 
 /* Tailwind CSS directives - handled by Astro's Tailwind integration */
 @tailwind base;
-@tailwind components; 
+@tailwind components;
 @tailwind utilities;
 
-:root {
-  --text-primary: #121212;
-  --text-secondary: #555555;
-  /* ultra-light grey canvas (3-4% tint) */
-  --surface-canvas: #F5F5F5;   /* ⬅︎ Seahawks grey */
-  --surface-card: #FFFFFF;
-  --brand-blue: #003087;       /* ⬅︎ Seahawks '76 blue */
-  --brand-green: #046A38;      /* ⬅︎ micro-accent only */
-}
-
 html {
-  /* Subtle scroll for anchor links */
+  font-size: 100%;
+  line-height: 1.6;
   scroll-behavior: smooth;
-  scroll-padding-top: 88px; /* Offset for sticky nav */
 }
 
 body {
-  /* every page now carries the ultra-light grey canvas */
-  background-color: var(--surface-canvas);
-  color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  @apply bg-navy text-fg font-sans antialiased;
+  line-height: 1.8;
 }
 
 /* The hero gradient, applied as a utility class */
@@ -42,11 +28,113 @@ body {
   z-index: -1;
 }
 
-/* Hero title brutalist enhancement for large screens */
-@media (min-width: 1024px) {
-  .hero-title { 
-    -webkit-text-stroke: 1px #000; 
-    text-shadow: 2px 2px 0 #fafafa; 
-  }
+@font-face {
+  font-family: 'The Future Mono Black';
+  src: url('/the-future-mono-black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-future-mono {
+  font-family: 'The Future Mono Black', 'Orbitron', 'monospace', sans-serif;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Test Pitch Sans Bold';
+  src: url('/test-pitch-sans-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-pitch-sans {
+  font-family: 'Test Pitch Sans Bold', 'Orbitron', 'monospace', sans-serif;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Geograph';
+  src: url('/test-geograph-light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('/test-geograph-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('/test-geograph-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('/test-geograph-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('/test-geograph-black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('/test-geograph-black-italic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+.font-geograph-light { font-family: 'Geograph', sans-serif; font-weight: 300; }
+.font-geograph-regular { font-family: 'Geograph', sans-serif; font-weight: 400; }
+.font-geograph-medium { font-family: 'Geograph', sans-serif; font-weight: 500; }
+.font-geograph-bold { font-family: 'Geograph', sans-serif; font-weight: 700; }
+.font-geograph-black { font-family: 'Geograph', sans-serif; font-weight: 900; }
+.font-geograph-black-italic { font-family: 'Geograph', sans-serif; font-weight: 900; font-style: italic; }
+
+h1, h2, h3, h4, h5, h6 {
+  @apply mt-12 mb-6;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Global hero title styling for gradient text */
+.hero-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+}
+
+:root {
+  --hero-gradient: linear-gradient(135deg, #1a2332 0%, #0f172a 100%);
+  --text-gradient: linear-gradient(90deg, #06b6d4 0%, #667eea 100%);
 }
 
