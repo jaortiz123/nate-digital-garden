@@ -1,0 +1,69 @@
+---
+// src/components/FeaturedCard.astro
+interface Props {
+  postUrl: string;
+  title: string;
+  description: string;
+  date?: string;
+  readTime?: string;
+}
+
+const { 
+  postUrl, 
+  title, 
+  description, 
+  date = "Dec 15, 2024", 
+  readTime = "8 min read" 
+} = Astro.props;
+---
+
+<!-- Featured card with sophisticated elevated design -->
+<div class="relative">
+  <!-- Premium featured badge -->
+  <div class="absolute -top-4 left-8 z-20">
+    <span class="bg-gradient-to-r from-accent-primary to-accent-secondary text-surface-primary px-6 py-3 ui-text font-bold uppercase tracking-wider rounded-full shadow-glow-cyan-sm">
+      Featured
+    </span>
+  </div>
+
+  <a 
+    href={postUrl} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="group block card-elevated hover:-translate-y-1 hover:shadow-glow-cyan-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface-primary transition-all duration-300 border-2 border-accent-primary/20"
+  >
+    <div class="p-10 md:p-12 flex flex-col gap-8">
+      <!-- Sophisticated meta information -->
+      <time class="ui-text text-accent-primary font-medium">{date}</time>
+      
+      <!-- Large featured headline using design system -->
+      <h2 class="headline-lg text-content-primary group-hover:text-accent-secondary transition-colors duration-200">
+        {title}
+      </h2>
+      
+      <!-- Substantial description with premium typography -->
+      <p class="body-lg text-content-secondary leading-relaxed">
+        {description.length > 200 ? description.substring(0, 200) + '...' : description}
+      </p>
+      
+      <!-- Sophisticated footer with premium CTA -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-white/10">
+        <span class="inline-flex items-center gap-3 bg-gradient-to-r from-accent-primary to-accent-secondary text-surface-primary px-8 py-4 rounded-xl font-medium text-lg group-hover:shadow-lg group-hover:scale-[1.02] transition-all duration-200">
+          Read Full Article
+          <svg 
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke-width="2" 
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+          </svg>
+        </span>
+        
+        <span class="ui-text text-content-tertiary">{readTime}</span>
+      </div>
+    </div>
+  </a>
+</div>

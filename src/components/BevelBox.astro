@@ -1,20 +1,52 @@
 ---
-// src/components/BevelBox.astro
+// src/components/BevelBox.astro - Premium Design System Component
 interface Props {
   class?: string;
   href?: string;
   target?: string;
   rel?: string;
+  variant?: 'default' | 'elevated' | 'premium';
+  size?: 'sm' | 'md' | 'lg';
 }
-const { class: className, href, target, rel } = Astro.props;
 
-// Base classes for the bevel effect
-const baseClasses = "group relative block rounded-bevel overflow-hidden";
-const glowLayer = "absolute inset-0 bg-gradient-to-br from-glow-cyan-300/50 via-transparent to-transparent rounded-bevel pointer-events-none group-hover:from-glow-cyan-300/90 transition-all duration-300";
-const contentBox = "relative z-10 bg-card-navy rounded-[18px] p-6 h-full shadow-bevel shadow-glow-cyan-100/60 group-hover:shadow-glow-cyan-100 transition-shadow duration-300";
+const { 
+  class: className, 
+  href, 
+  target, 
+  rel,
+  variant = 'default',
+  size = 'md'
+} = Astro.props;
+
+// Sophisticated base classes with premium feel
+const baseClasses = "group relative block rounded-bevel overflow-hidden transition-all duration-300 focus-ring hover-lift will-change-transform";
+
+// Size variants following 8px grid system
+const sizeClasses = {
+  sm: "p-4",   // 32px padding
+  md: "p-6",   // 48px padding  
+  lg: "p-8",   // 64px padding
+};
+
+// Variant-specific styling for different use cases
+const variantStyles = {
+  default: {
+    glow: "absolute inset-0 bg-gradient-to-br from-accent-primary/30 via-transparent to-transparent rounded-bevel pointer-events-none group-hover:from-accent-primary/50 transition-all duration-300",
+    content: "relative z-10 bg-surface-secondary rounded-[18px] h-full shadow-card group-hover:shadow-card-hover transition-all duration-300 border border-white/5"
+  },
+  elevated: {
+    glow: "absolute inset-0 bg-gradient-to-br from-accent-primary/40 via-accent-secondary/20 to-transparent rounded-bevel pointer-events-none group-hover:from-accent-primary/70 group-hover:via-accent-secondary/30 transition-all duration-300",
+    content: "relative z-10 bg-surface-tertiary rounded-[18px] h-full shadow-card-elevated group-hover:shadow-glow-cyan-sm transition-all duration-300 border border-accent-primary/10"
+  },
+  premium: {
+    glow: "absolute inset-0 bg-gradient-to-br from-accent-primary/50 via-accent-secondary/30 to-accent-primary/20 rounded-bevel pointer-events-none group-hover:from-accent-primary/80 group-hover:via-accent-secondary/50 group-hover:to-accent-primary/30 transition-all duration-300",
+    content: "relative z-10 bg-gradient-to-br from-surface-tertiary to-surface-secondary rounded-[18px] h-full shadow-bevel group-hover:shadow-bevel-hover transition-all duration-300 border border-accent-primary/20 group-hover:border-accent-primary/40"
+  }
+};
 
 // If href is provided, render as a link, otherwise as a div
 const Tag = href ? 'a' : 'div';
+const currentVariant = variantStyles[variant];
 ---
 
 <Tag 
@@ -23,11 +55,11 @@ const Tag = href ? 'a' : 'div';
   rel={rel}
   class:list={[baseClasses, className]}
 >
-  <!-- Glow/Bevel Layer -->
-  <div class={glowLayer}></div>
+  <!-- Sophisticated Glow/Bevel Layer -->
+  <div class={currentVariant.glow}></div>
 
-  <!-- Inner Content Box -->
-  <div class={contentBox}>
+  <!-- Inner Content Box with Premium Styling -->
+  <div class:list={[currentVariant.content, sizeClasses[size]]}>
     <slot />
   </div>
 </Tag>

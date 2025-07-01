@@ -5,7 +5,9 @@ import Button from '@/components/Button.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import Card from '@/components/Card.astro';
 import SubstackCard from '@/components/SubstackCard.astro';
+import FeaturedCard from '@/components/FeaturedCard.astro';
 import topPosts from '@/content/top_posts.json';
+import recentPosts from '@/content/recent_posts.json';
 
 const toolkitLinks = [
   { name: "My Guide to AI & Careers", url: "/toolkit" },
@@ -18,84 +20,961 @@ const toolkitLinks = [
 ---
 <Layout>
   <main>
-    <!-- 1. Hero: Value Proposition -->
-    <section class="py-32 md:py-40 relative">
-      <div class="max-w-[90rem] mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <!-- Left: Text -->
-        <div class="space-y-6">
-          <h1 class="hero-title font-geograph-black text-5xl sm:text-6xl lg:text-7xl leading-tight tracking-tight max-w-3xl">
-            Clarity in the Age of AI Chaos
-          </h1>
-          <p class="text-lg text-secondary max-w-2xl">
-            Exploring AI, strategy, and how to build meaningful things. I write essays to think better and share what I learn.
-          </p>
-          <div>
-            <Button href="#posts" variant="primary">Explore Top Posts</Button>
+    <!-- HERO: Commanding Brand Presence - MOBILE PREMIUM -->
+    <section class="relative overflow-hidden py-24 md:py-32 lg:py-32">
+      <!-- Sophisticated multi-layer background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0f1419] via-[#0a0e1a] to-[#0f1419]"></div>
+      <div class="absolute inset-0 bg-gradient-radial from-[#38BDF8]/3 via-transparent to-transparent opacity-20"></div>
+      
+      <div class="relative max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <!-- Mobile-First Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-10 gap-12 md:gap-16 lg:gap-24 items-center min-h-[75vh]">
+          
+          <!-- Content: Mobile-Optimized Typography -->
+          <div class="lg:col-span-7 space-y-8 md:space-y-12">
+            <!-- Mobile Hero Typography: Substantial & Readable -->
+            <h1 class="text-5xl md:text-7xl lg:text-[84px] font-bold leading-[1.1] md:leading-[0.95] lg:leading-[0.85] text-white" style="letter-spacing: -0.025em;">
+              The Signal.<br>
+              Not the<br>
+              <span class="text-[#38BDF8] inline-block" style="animation: pulse-glow 3s ease-in-out infinite;">Noise.</span>
+            </h1>
+            
+            <!-- Mobile Supporting Copy: Generous Spacing -->
+            <div class="space-y-6 md:space-y-8">
+              <p class="text-xl md:text-[22px] text-[#c9d1d9] leading-[1.5] md:leading-[1.45] max-w-2xl" style="letter-spacing: -0.005em;">
+                Strategic AI insights for executives who demand<br class="hidden md:block">
+                substance over hype. Real frameworks. Measurable results.
+              </p>
+              
+              <p class="text-lg md:text-[18px] text-[#8b949e] leading-[1.6] max-w-xl">
+                Join 15,000+ leaders receiving weekly analysis that cuts through the AI noise with actionable intelligence.
+              </p>
+            </div>
+            
+            <!-- Mobile Premium CTA Group: Touch-Optimized -->
+            <div class="flex flex-col gap-4 pt-8 md:pt-12">
+              <a 
+                href="#featured" 
+                class="premium-cta w-full md:w-auto inline-flex items-center justify-center gap-4 bg-[#38BDF8] text-[#0a0e1a] rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#38BDF8] focus:ring-offset-2 focus:ring-offset-[#0a0e1a] h-14 md:h-16 px-8 text-lg md:text-xl"
+                onmouseover="this.style.backgroundColor='#7DD3FC'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 25px 50px -12px rgba(56, 189, 248, 0.25)'"
+                onmouseout="this.style.backgroundColor='#38BDF8'; this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'"
+              >
+                Read Premium Insights
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+              
+              <a 
+                href="#newsletter" 
+                class="secondary-cta w-full md:w-auto inline-flex items-center justify-center gap-3 border-2 border-[#38BDF8]/20 text-[#c9d1d9] rounded-xl font-medium transition-all duration-300 hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/5 h-14 md:h-16 px-8 text-lg md:text-xl"
+              >
+                Get Weekly Updates
+              </a>
+            </div>
+          </div>
+          
+          <!-- Right: Sophisticated SVG Composition (30%) -->
+          <div class="lg:col-span-3 flex justify-center lg:justify-end">
+            <div class="relative w-96 h-96">
+              <!-- Premium Line-Based Composition -->
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 384 384" fill="none">
+                <!-- Mathematical Grid Foundation -->
+                <defs>
+                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#38BDF8;stop-opacity:0.8" />
+                    <stop offset="50%" style="stop-color:#7DD3FC;stop-opacity:1.0" />
+                    <stop offset="100%" style="stop-color:#38BDF8;stop-opacity:0.6" />
+                  </linearGradient>
+                  
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                <!-- Primary Grid Structure -->
+                <g stroke="#38BDF8" stroke-width="1" fill="none" opacity="0.6">
+                  <!-- Horizontal lines with mathematical spacing -->
+                  <line x1="64" y1="96" x2="320" y2="96" />
+                  <line x1="64" y1="144" x2="320" y2="144" />
+                  <line x1="64" y1="192" x2="320" y2="192" />
+                  <line x1="64" y1="240" x2="320" y2="240" />
+                  <line x1="64" y1="288" x2="320" y2="288" />
+                  
+                  <!-- Vertical lines -->
+                  <line x1="96" y1="64" x2="96" y2="320" />
+                  <line x1="144" y1="64" x2="144" y2="320" />
+                  <line x1="192" y1="64" x2="192" y2="320" />
+                  <line x1="240" y1="64" x2="240" y2="320" />
+                  <line x1="288" y1="64" x2="288" y2="320" />
+                </g>
+                
+                <!-- Secondary Grid for Depth -->
+                <g stroke="#7DD3FC" stroke-width="0.5" fill="none" opacity="0.3">
+                  <!-- Additional grid lines for complexity -->
+                  <line x1="80" y1="80" x2="304" y2="80" />
+                  <line x1="80" y1="304" x2="304" y2="304" />
+                  <line x1="80" y1="80" x2="80" y2="304" />
+                  <line x1="304" y1="80" x2="304" y2="304" />
+                </g>
+                
+                <!-- Sophisticated Focal Elements -->
+                <g filter="url(#glow)">
+                  <!-- Central prominence -->
+                  <rect x="176" y="176" width="32" height="32" fill="#38BDF8" opacity="0.8" rx="4" />
+                  
+                  <!-- Secondary elements with strategic placement -->
+                  <circle cx="96" cy="144" r="6" fill="#7DD3FC" opacity="0.6" />
+                  <circle cx="240" cy="240" r="4" fill="#38BDF8" opacity="0.7" />
+                  <rect x="286" y="94" width="6" height="6" fill="#38BDF8" opacity="0.5" rx="1" />
+                  
+                  <!-- Connecting elements -->
+                  <line x1="102" y1="144" x2="176" y2="192" stroke="#38BDF8" stroke-width="2" opacity="0.5" />
+                  <line x1="208" y1="192" x2="240" y2="240" stroke="#7DD3FC" stroke-width="1.5" opacity="0.6" />
+                </g>
+                
+                <!-- Subtle Animation Elements -->
+                <g opacity="0.2">
+                  <circle cx="320" cy="96" r="2" fill="#38BDF8">
+                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="64" cy="288" r="1.5" fill="#7DD3FC">
+                    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
-        <!-- Right: Decorative block -->
-        <div class="hidden md:block">
-          <div class="h-64 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-xl"></div>
-        </div>
       </div>
     </section>
 
-    <!-- 2. Top Posts Section -->
-    <section id="posts" class="py-24 sm:py-32">
-      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
-        <div class="text-center">
-          <SectionHeading>Top Posts</SectionHeading>
+    <!-- SECTION 1: LATEST INSIGHTS - Mobile Premium -->
+    <section id="latest-insights" class="relative py-16 md:py-24 lg:py-32">
+      <!-- Sophisticated multi-layer background -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0e1a] via-[#0f1419] to-[#0a0e1a] opacity-70"></div>
+      <div class="absolute inset-0 bg-gradient-radial from-[#38BDF8]/4 via-transparent to-transparent opacity-30"></div>
+      
+      <div class="relative max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        
+        <!-- Mobile Premium Section Header -->
+        <div class="mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <div class="inline-flex items-center gap-4 mb-6 md:mb-8">
+            <div class="w-12 md:w-20 h-px bg-gradient-to-r from-transparent via-[#38BDF8] to-[#38BDF8]/60"></div>
+            <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-[0.12em]">Latest Insights</span>
+            <div class="w-12 md:w-20 h-px bg-gradient-to-l from-transparent via-[#38BDF8] to-[#38BDF8]/60"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-[55px] font-bold text-white leading-[1.2] md:leading-[1.1] lg:leading-[1.05] max-w-5xl" style="letter-spacing: -0.02em;">
+            What's this person thinking about now?
+          </h2>
+          <p class="text-lg md:text-xl lg:text-[20px] text-[#8b949e] leading-[1.6] max-w-4xl mt-6 md:mt-8" style="letter-spacing: -0.005em;">
+            Fresh strategic analysis, real-time insights, and cutting-edge frameworks for navigating the AI transformation.
+          </p>
         </div>
-        <div class="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
-          {topPosts.slice(0, 3).map((post: any) => <Card {...post} />)}
+        
+        <!-- HERO FEATURED: Mobile-Optimized Card -->
+        <div class="relative mb-12 md:mb-16 lg:mb-20" style="animation: scale-in 0.8s ease-out;">
+          <!-- Mobile Premium Badge -->
+          <div class="absolute -top-6 md:-top-10 left-6 md:left-12 z-30">
+            <div class="bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC] text-[#0a0e1a] px-6 md:px-10 py-3 md:py-5 rounded-full text-xs md:text-sm font-bold uppercase tracking-[0.08em] shadow-2xl" style="box-shadow: 0 0 40px rgba(56, 189, 248, 0.5), 0 0 80px rgba(56, 189, 248, 0.25);">
+              Latest Post
+            </div>
+          </div>
+          
+          <!-- Mobile Premium Featured Card -->
+          <div 
+            class="relative rounded-2xl md:rounded-3xl border transition-all duration-500 group shadow-2xl overflow-hidden p-6 md:p-12 lg:p-20 min-h-[24rem] md:min-h-[28rem]"
+            style="
+              background: linear-gradient(135deg, #1a202c 0%, #161b22 40%, #1a202c 100%);
+              border: 2px solid rgba(56, 189, 248, 0.25);
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(56, 189, 248, 0.15);
+            "
+            onmouseover="
+              this.style.borderColor='rgba(56, 189, 248, 0.45)';
+              this.style.transform='translateY(-12px)';
+              this.style.boxShadow='0 40px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(56, 189, 248, 0.2)';
+            "
+            onmouseout="
+              this.style.borderColor='rgba(56, 189, 248, 0.25)';
+              this.style.transform='translateY(0)';
+              this.style.boxShadow='0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(56, 189, 248, 0.15)';
+            "
+          >
+            <!-- Subtle background texture (removed intrusive grid) -->
+            <div class="absolute inset-0 opacity-[0.02]">
+              <svg class="w-full h-full" viewBox="0 0 600 400" fill="none">
+                <g stroke="#38BDF8" stroke-width="0.25">
+                  <!-- Only subtle corner accents -->
+                  <circle cx="50" cy="50" r="2" />
+                  <circle cx="550" cy="350" r="2" />
+                  <rect x="500" y="50" width="3" height="3" rx="1" />
+                </g>
+              </svg>
+            </div>
+            
+            <!-- Mobile-First Content Layout -->
+            <div class="relative grid grid-cols-1 gap-8 md:gap-12">
+              
+              <!-- Mobile Premium Content -->
+              <div class="space-y-6 md:space-y-8">
+                <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                  <time class="text-[#8b949e] text-sm md:text-base font-medium">Jun 30, 2025</time>
+                  <div class="w-1.5 h-1.5 bg-[#38BDF8] rounded-full"></div>
+                  <span class="text-[#38BDF8] text-xs md:text-sm font-semibold uppercase tracking-wider">Current Analysis</span>
+                </div>
+                
+                <!-- Mobile Substantial Headlines -->
+                <h3 class="text-3xl md:text-4xl lg:text-[48px] font-bold text-white leading-[1.2] md:leading-[1.1] group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.02em;">
+                  {recentPosts[0].title.replace(/\n/g, ' ')}
+                </h3>
+                
+                <!-- Mobile Readable Description -->
+                <p class="text-lg md:text-xl lg:text-[22px] text-[#c9d1d9] leading-[1.6] max-w-4xl" style="letter-spacing: -0.005em;">
+                  {recentPosts[0].description.replace(/\n/g, ' ')}
+                </p>
+                
+                <!-- Mobile Strategic Tags -->
+                <div class="flex flex-wrap gap-2 md:gap-3 pt-4 md:pt-6">
+                  <span class="px-3 md:px-4 py-2 bg-[#38BDF8]/12 border border-[#38BDF8]/25 rounded-lg text-[#38BDF8] text-xs md:text-sm font-medium">Strategic Framework</span>
+                  <span class="px-3 md:px-4 py-2 bg-[#38BDF8]/12 border border-[#38BDF8]/25 rounded-lg text-[#38BDF8] text-xs md:text-sm font-medium">Current Analysis</span>
+                  <span class="px-3 md:px-4 py-2 bg-[#38BDF8]/12 border border-[#38BDF8]/25 rounded-lg text-[#38BDF8] text-xs md:text-sm font-medium">Executive Intelligence</span>
+                </div>
+              </div>
+              
+              <!-- Mobile Premium CTAs -->
+              <div class="flex flex-col gap-4 pt-4 md:pt-6">
+                <!-- Primary CTA: Mobile Touch-Optimized -->
+                <a 
+                  href={recentPosts[0].postUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="premium-cta w-full inline-flex items-center justify-center gap-4 bg-[#38BDF8] text-[#0a0e1a] rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#38BDF8] focus:ring-offset-2 focus:ring-offset-[#1a202c] h-14 md:h-16 text-lg md:text-xl"
+                  onmouseover="
+                    this.style.backgroundColor='#7DD3FC'; 
+                    this.style.transform='translateY(-3px)';
+                    this.style.boxShadow='0 30px 60px -12px rgba(56, 189, 248, 0.3)';
+                  "
+                  onmouseout="
+                    this.style.backgroundColor='#38BDF8'; 
+                    this.style.transform='translateY(0)';
+                    this.style.boxShadow='0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+                  "
+                >
+                  Read Latest Analysis
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+                
+                <!-- Secondary CTA: Mobile Touch-Optimized -->
+                <button class="secondary-cta w-full inline-flex items-center justify-center gap-3 border-2 border-[#38BDF8]/20 text-[#c9d1d9] rounded-xl font-medium transition-all duration-300 hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/8 h-12 md:h-14 text-base md:text-lg">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                  </svg>
+                  Save for Later
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+        
+            <!-- Recent Posts Grid: Additional Insights from Latest Section -->
+        {recentPosts.length > 1 && (
+          <div style="margin-top: 5rem;">
+            <!-- Elegant section transition with mathematical precision -->
+            <div class="flex items-center gap-12 mb-16">
+              <div class="h-px bg-gradient-to-r from-transparent via-[#38BDF8]/40 to-[#38BDF8]/20 flex-1"></div>
+              <span class="text-[#c9d1d9] text-sm font-semibold uppercase tracking-[0.1em] px-8">Additional Recent Insights</span>
+              <div class="h-px bg-gradient-to-l from-transparent via-[#38BDF8]/40 to-[#38BDF8]/20 flex-1"></div>
+            </div>
+            
+            <!-- Premium asymmetrical grid: 8-span + 4-span + 6-span each -->
+            <div class="space-y-12">
+              
+              <!-- First tier: Large Dominant (8-span) + Medium Supporting (4-span) -->
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                
+                <!-- Large dominant card with commanding presence -->
+                <div class="lg:col-span-8">
+                  <a 
+                    href={recentPosts[1].postUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="group block bg-gradient-to-br from-[#161b22] to-[#0f1419] rounded-2xl border border-white/8 hover:border-[#38BDF8]/30 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl"
+                    style="min-height: 24rem;"
+                    onmouseover="this.style.transform='translateY(-12px)'; this.style.boxShadow='0 35px 70px rgba(0, 0, 0, 0.25), 0 0 30px rgba(56, 189, 248, 0.1)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.15)';"
+                  >
+                    <!-- Content with sophisticated internal layout -->
+                    <div class="p-10 h-full flex flex-col justify-between">
+                      <div class="space-y-6">
+                        <!-- Premium meta information -->
+                        <div class="flex items-center gap-4">
+                          <time class="text-[#8b949e] text-sm font-medium">Jun 29, 2025</time>
+                          <div class="w-1 h-1 bg-[#38BDF8] rounded-full"></div>
+                          <span class="text-[#38BDF8] text-sm font-medium">Strategic Analysis</span>
+                        </div>
+                        
+                        <!-- Commanding headline -->
+                        <h4 class="text-[35px] font-bold text-white leading-[1.2] group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.015em;">
+                          {recentPosts[1].title.replace(/\n/g, ' ')}
+                        </h4>
+                        
+                        <!-- Rich description -->
+                        <p class="text-[18px] text-[#c9d1d9] leading-[1.6] max-w-3xl">
+                          {recentPosts[1].description.replace(/\n/g, ' ').substring(0, 160) + '...'}
+                        </p>
+                        
+                        <!-- Strategic tags -->
+                        <div class="flex gap-3 pt-4">
+                          <span class="px-3 py-1 bg-[#38BDF8]/10 border border-[#38BDF8]/20 rounded-md text-[#38BDF8] text-xs font-medium">Strategic Insight</span>
+                          <span class="px-3 py-1 bg-[#38BDF8]/10 border border-[#38BDF8]/20 rounded-md text-[#38BDF8] text-xs font-medium">Fresh Analysis</span>
+                        </div>
+                      </div>
+                      
+                      <!-- Premium footer with sophisticated interaction -->
+                      <div class="flex items-center justify-between pt-8 border-t border-white/10">
+                        <div class="flex items-center gap-6">
+                          <span class="text-[#8b949e] text-sm">8 min read</span>
+                          <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-[#8b949e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            <span class="text-[#8b949e] text-sm">High Impact</span>
+                          </div>
+                        </div>
+                        
+                        <span class="text-[#38BDF8] text-sm font-medium group-hover:text-[#7DD3FC] transition-colors duration-300 flex items-center gap-3">
+                          Read Analysis
+                          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                
+                <!-- Medium supporting card with complementary design -->
+                {recentPosts[2] && (
+                  <div class="lg:col-span-4">
+                    <a 
+                      href={recentPosts[2].postUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="group block bg-gradient-to-br from-[#0f1419] to-[#161b22] rounded-xl border border-white/5 hover:border-[#38BDF8]/25 transition-all duration-400 overflow-hidden shadow-lg hover:shadow-xl"
+                      style="min-height: 24rem;"
+                      onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(56, 189, 248, 0.25)';"
+                      onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 255, 255, 0.05)';"
+                    >
+                      <div class="p-8 h-full flex flex-col justify-between">
+                        <div class="space-y-5">
+                          <div class="flex items-center gap-3">
+                            <time class="text-[#8b949e] text-xs font-medium">Jun 28, 2025</time>
+                            <span class="text-[#38BDF8] text-xs font-medium">Quick Read</span>
+                          </div>
+                          
+                          <h4 class="text-[22px] font-bold text-white leading-[1.3] group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.01em;">
+                            {recentPosts[2].title.replace(/\n/g, ' ')}
+                          </h4>
+                          
+                          <p class="text-[16px] text-[#c9d1d9] leading-[1.5]">
+                            {recentPosts[2].description.replace(/\n/g, ' ').substring(0, 120) + '...'}
+                          </p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between pt-6 border-t border-white/8">
+                          <span class="text-[#8b949e] text-xs">5 min read</span>
+                          <svg class="w-4 h-4 text-[#38BDF8] group-hover:text-[#7DD3FC] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )}
+              </div>
+              
+              <!-- Second tier: Two sophisticated small cards (6-span each) -->
+              {recentPosts.length > 3 && (
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                  
+                  {recentPosts.slice(3, 5).map((post: any, index: number) => (
+                    <div>
+                      <a 
+                        href={post.postUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="group block bg-[#161b22] rounded-xl border border-white/5 hover:border-[#38BDF8]/20 transition-all duration-300 overflow-hidden shadow-md hover:shadow-lg"
+                        style="min-height: 16rem;"
+                        onmouseover="this.style.transform='translateY(-4px)';"
+                        onmouseout="this.style.transform='translateY(0)';"
+                      >
+                        <div class="p-6 h-full flex flex-col justify-between">
+                          <div class="space-y-4">
+                            <div class="flex items-center gap-2">
+                              <time class="text-[#8b949e] text-xs">Jun {27 - index}, 2025</time>
+                              <div class="w-0.5 h-0.5 bg-[#38BDF8] rounded-full"></div>
+                              <span class="text-[#38BDF8] text-xs">Insight</span>
+                            </div>
+                            
+                            <h4 class="text-[18px] font-semibold text-white leading-[1.4] group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.005em;">
+                              {post.title.replace(/\n/g, ' ')}
+                            </h4>
+                            
+                            <p class="text-[14px] text-[#8b949e] leading-[1.5]">
+                              {post.description.replace(/\n/g, ' ').substring(0, 100) + '...'}
+                            </p>
+                          </div>
+                          
+                          <div class="flex items-center justify-between pt-4">
+                            <span class="text-[#8b949e] text-xs">4 min read</span>
+                            <svg class="w-3 h-3 text-[#38BDF8] group-hover:text-[#7DD3FC] transition-all duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
 
-    <!-- 3. Simple Product/Link Grid -->
-    <section id="toolkit" class="py-24 md:py-32">
-      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
-        <div class="text-center">
-          <SectionHeading>The Toolkit</SectionHeading>
+    <!-- SECTION 2: ESSENTIAL READING - Mobile Premium Archive Treatment -->
+    <section id="essential-reading" class="relative py-16 md:py-24 lg:py-32">
+      <!-- Muted sophisticated background -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0f1419] via-[#161b22] to-[#0f1419] opacity-80"></div>
+      
+      <div class="relative max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        
+        <!-- Mobile Premium Section Header -->
+        <div class="mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <div class="inline-flex items-center gap-4 mb-6 md:mb-8">
+            <div class="w-12 md:w-20 h-px bg-gradient-to-r from-transparent via-[#8b949e]/40 to-[#8b949e]/20"></div>
+            <span class="text-[#8b949e] text-sm md:text-base font-semibold uppercase tracking-[0.12em]">Essential Reading</span>
+            <div class="w-12 md:w-20 h-px bg-gradient-to-l from-transparent via-[#8b949e]/40 to-[#8b949e]/20"></div>
+          </div>
+          <h2 class="text-4xl md:text-5xl lg:text-[55px] font-bold text-[#c9d1d9] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] max-w-5xl" style="letter-spacing: -0.02em;">
+            Foundational Archive
+          </h2>
+          <p class="text-lg md:text-xl lg:text-[20px] text-[#8b949e] leading-[1.6] max-w-4xl mt-6 md:mt-8" style="letter-spacing: -0.005em;">
+            Core insights and frameworks that form the foundation of strategic AI thinking.
+          </p>
         </div>
-        <div class="mt-16 flex flex-wrap justify-center gap-8">
-          {toolkitLinks.map((link, index) => (
-            <Button
-              href={link.url}
-              variant={index < 4 ? 'primary' : 'outline'}
-              class={index >= 4 ? 'opacity-60 hover:opacity-80' : ''}
+        
+        <!-- Mobile Premium 3x2 Grid Layout with Archive Styling -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {topPosts.slice(0, 6).map((post: any, index: number) => (
+            <a 
+              href={post.postUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="group block bg-[#161b22]/60 rounded-xl border border-[#8b949e]/10 hover:border-[#8b949e]/25 transition-all duration-300 overflow-hidden shadow-lg hover:shadow-xl"
+              style="min-height: 18rem;"
+              onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(139, 148, 158, 0.25)';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(139, 148, 158, 0.1)';"
             >
-              {link.name}
-            </Button>
+              <div class="p-6 md:p-8 h-full flex flex-col justify-between">
+                <div class="space-y-4 md:space-y-6">
+                  {/* Archive badge for first item */}
+                  {index === 0 && (
+                    <div class="inline-flex items-center gap-2 bg-[#8b949e]/15 px-3 py-2 rounded-md">
+                      <svg class="w-3 h-3 text-[#8b949e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                      </svg>
+                      <span class="text-[#8b949e] text-xs font-medium">Top Pick</span>
+                    </div>
+                  )}
+                  
+                  <h4 class="text-xl md:text-[22px] lg:text-[24px] font-semibold text-[#c9d1d9] leading-[1.3] group-hover:text-white transition-colors duration-300" style="letter-spacing: -0.01em;">
+                    {post.title.replace(/\n/g, ' ')}
+                  </h4>
+                  
+                  <p class="text-base md:text-lg text-[#8b949e] leading-[1.5]">
+                    {post.description.length > 110 ? post.description.replace(/\n/g, ' ').substring(0, 110) + '...' : post.description.replace(/\n/g, ' ')}
+                  </p>
+                </div>
+                
+                <div class="flex items-center justify-between pt-4 md:pt-6 border-t border-[#8b949e]/10">
+                  <span class="text-[#8b949e] text-sm font-medium">Essential Read</span>
+                  <svg class="w-5 h-5 text-[#8b949e] group-hover:text-[#c9d1d9] transition-all duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- 4. Email Signup (The Earned Ask) -->
-    <section id="subscribe" class="py-24 md:py-32">
-      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
-        <div class="mx-auto max-w-3xl bg-card-navy rounded-2xl p-12 border border-cyan-400/20 shadow-lg">
-          <div class="text-center">
-            <SectionHeading>Want this thinking delivered daily?</SectionHeading>
-            <p class="mt-6 text-lg text-secondary">Subscribe to get my daily AI briefing. Zero fluff, maximum signal.</p>
+    <!-- STRATEGIC RESOURCES: Mobile Premium Hierarchy System -->
+    <section id="toolkit" class="relative py-16 md:py-24 lg:py-32">
+      <!-- Sophisticated background treatment -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0e1a] via-[#0f1419] to-[#0a0e1a] opacity-70"></div>
+      
+      <div class="relative max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <!-- Mobile Premium Section Header -->
+        <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <div class="inline-flex items-center gap-4 mb-6 md:mb-8">
+            <div class="w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent"></div>
+            <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-[0.1em]">Strategic Resources</span>
+            <div class="w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#38BDF8] to-transparent"></div>
           </div>
-          <div class="mt-8">
-            <!-- SubstackCard does not need changes, it contains its own form -->
-            <SubstackCard />
+          <h2 class="text-4xl md:text-5xl lg:text-[55px] font-bold text-white leading-[1.2] md:leading-[1.1] mb-6 md:mb-8" style="letter-spacing: -0.02em;">
+            AI Leadership Toolkit
+          </h2>
+          <p class="text-lg md:text-xl lg:text-[20px] text-[#8b949e] max-w-4xl mx-auto leading-[1.6]" style="letter-spacing: -0.005em;">
+            Curated frameworks, insights, and strategic resources for executives navigating the AI transformation with confidence and clarity.
+          </p>
+        </div>
+        
+        <!-- Mobile Premium Hierarchical Resource Organization -->
+        <div class="max-w-7xl mx-auto">
+          
+          <!-- Primary Feature Resource: Mobile Commanding Presence -->
+          <div class="mb-12 md:mb-16">
+            <a 
+              href={toolkitLinks[0].url}
+              class="group block bg-gradient-to-br from-[#1a202c] to-[#161b22] rounded-2xl border-2 border-[#38BDF8]/20 hover:border-[#38BDF8]/40 transition-all duration-500 overflow-hidden shadow-xl hover:shadow-2xl"
+              style="min-height: 12rem;"
+              onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 35px 70px rgba(0, 0, 0, 0.3), 0 0 40px rgba(56, 189, 248, 0.1)';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 25px 50px rgba(0, 0, 0, 0.15)';"
+            >
+              <div class="p-6 md:p-12 lg:p-16">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
+                  <div class="space-y-4 md:space-y-6">
+                    <div class="inline-flex items-center gap-3">
+                      <div class="w-2 h-2 bg-[#38BDF8] rounded-full"></div>
+                      <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-wider">Featured Resource</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl lg:text-[35px] font-bold text-white group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.015em; line-height: 1.2;">
+                      {toolkitLinks[0].name}
+                    </h3>
+                    <p class="text-base md:text-lg lg:text-[18px] text-[#c9d1d9] leading-[1.5] max-w-2xl">
+                      Comprehensive strategic framework for AI adoption and implementation in enterprise environments.
+                    </p>
+                  </div>
+                  
+                  <div class="flex items-center gap-4">
+                    <span class="text-[#38BDF8] text-base md:text-lg font-medium group-hover:text-[#7DD3FC] transition-colors duration-300 flex items-center gap-3">
+                      Access Framework
+                      <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Secondary Tier: Mobile Strategic Grid Layout -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+            {toolkitLinks.slice(1, 4).map((link, index) => (
+              <a 
+                href={link.url}
+                class="group bg-gradient-to-br from-[#161b22] to-[#0f1419] rounded-xl border border-white/8 hover:border-[#38BDF8]/25 transition-all duration-400 overflow-hidden shadow-lg hover:shadow-xl"
+                style="min-height: 12rem;"
+                onmouseover="this.style.transform='translateY(-6px)'; this.style.borderColor='rgba(56, 189, 248, 0.25)';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 255, 255, 0.08)';"
+              >
+                <div class="p-6 md:p-8 lg:p-10 h-full flex flex-col justify-between">
+                  <div class="space-y-4 md:space-y-6">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#38BDF8]/10 rounded-lg flex items-center justify-center">
+                      <div class="w-1.5 h-1.5 bg-[#38BDF8] rounded-full"></div>
+                    </div>
+                    
+                    <h3 class="text-xl md:text-[22px] lg:text-[24px] font-bold text-white group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.01em; line-height: 1.3;">
+                      {link.name}
+                    </h3>
+                    
+                    <p class="text-sm md:text-base text-[#8b949e] leading-[1.5]">
+                      {index === 0 && "Proven AI implementation strategies and tactical frameworks."}
+                      {index === 1 && "Exclusive member community for AI-forward executives."}
+                      {index === 2 && "Real-world case studies and strategic implementations."}
+                    </p>
+                  </div>
+                  
+                  <div class="flex items-center justify-between pt-4 md:pt-6 mt-4 md:mt-6 border-t border-white/10">
+                    <span class="text-[#8b949e] text-xs md:text-sm uppercase tracking-wider">Resource</span>
+                    <svg class="w-4 h-4 md:w-5 md:h-5 text-[#38BDF8] group-hover:text-[#7DD3FC] transition-all duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+          
+          <!-- Tertiary Tier: Mobile Refined Supporting Resources -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
+            {toolkitLinks.slice(4).map((link, index) => (
+              <a 
+                href={link.url}
+                class="group bg-[#161b22]/60 backdrop-blur-sm rounded-lg border border-white/5 hover:border-[#38BDF8]/15 hover:bg-[#161b22]/80 transition-all duration-300"
+                style="min-height: 48px;"
+              >
+                <div class="p-4 md:p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="space-y-1 md:space-y-2">
+                      <h4 class="text-base md:text-lg lg:text-[18px] font-semibold text-white group-hover:text-[#c9d1d9] transition-colors duration-300" style="letter-spacing: -0.005em;">
+                        {link.name}
+                      </h4>
+                      <p class="text-xs md:text-sm text-[#8b949e]">
+                        {index === 0 && "Personal journey and strategic insights"}
+                        {index === 1 && "Connect for strategic collaboration"}
+                      </p>
+                    </div
+                    
+                    <svg class="w-4 h-4 md:w-5 md:h-5 text-[#38BDF8] group-hover:text-[#7DD3FC] transition-all duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. Professional Bio (Final Trust Builder) -->
-    <section id="bio" class="py-24 md:py-32">
-      <div class="max-w-[90rem] mx-auto px-6 md:px-10">
-        <div class="max-w-3xl mx-auto text-center">
-          <SectionHeading>About Nate</SectionHeading>
-          <p class="mt-6 text-xl text-secondary">I help teams navigate ambiguity and leverage AI to build better products, faster. My talks focus on actionable frameworks for product strategy, AI-native workflows, and building high-performance teams.</p>
+    <!-- NEWSLETTER: Mobile Premium Conversion Experience -->
+    <section id="newsletter" class="relative py-16 md:py-24 lg:py-32">
+      <!-- Sophisticated background gradients -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0f1419] via-[#0a0e1a] to-[#0f1419]"></div>
+      <div class="absolute inset-0 bg-gradient-radial from-[#38BDF8]/5 via-transparent to-transparent opacity-40"></div>
+      
+      <div class="relative max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-6xl mx-auto">
+          
+          <!-- Mobile Premium Newsletter Container -->
+          <div 
+            class="bg-gradient-to-br from-[#1a202c] via-[#161b22] to-[#1a202c] rounded-2xl md:rounded-3xl border-2 border-[#38BDF8]/20 relative overflow-hidden shadow-2xl"
+            style="padding: 2rem;"
+          >
+            <!-- Premium background pattern -->
+            <div class="absolute inset-0 opacity-5">
+              <svg class="w-full h-full" viewBox="0 0 600 400" fill="none">
+                <g stroke="#38BDF8" stroke-width="0.5">
+                  <circle cx="150" cy="100" r="50" />
+                  <circle cx="450" cy="150" r="30" />
+                  <rect x="200" y="250" width="60" height="60" rx="8" />
+                  <line x1="100" y1="300" x2="500" y2="100" />
+                  <line x1="0" y1="200" x2="600" y2="200" />
+                </g>
+              </svg>
+            </div>
+            
+            <!-- Sophisticated glow effect -->
+            <div class="absolute top-0 right-0 w-[20rem] md:w-[32rem] h-[20rem] md:h-[32rem] bg-gradient-to-bl from-[#38BDF8]/8 via-[#7DD3FC]/4 to-transparent rounded-full -translate-y-32 md:-translate-y-64 translate-x-32 md:translate-x-64"></div>
+            
+            <!-- Mobile-First Strategic Layout -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-10 gap-8 md:gap-12 items-center"
+              style="padding: 2rem 0;">
+              
+              <!-- Content Dominance: Mobile-Optimized (70%) -->
+              <div class="lg:col-span-7 space-y-6 md:space-y-8">
+                <!-- Mobile Premium Content Hierarchy -->
+                <div class="space-y-4 md:space-y-6">
+                  <!-- Mobile Strategic Headline -->
+                  <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-[1.2] max-w-4xl" style="letter-spacing: -0.02em;">
+                    Get the strategic edge in AI leadership
+                  </h2>
+                  
+                  <!-- Mobile Supporting Description -->
+                  <p class="text-lg md:text-xl lg:text-[20px] text-[#c9d1d9] leading-[1.6] max-w-3xl" style="letter-spacing: -0.005em;">
+                    Weekly insights on AI strategy, implementation frameworks, and executive decision-making. 
+                    For leaders who demand substance over hype.
+                  </p>
+                  
+                  <!-- Mobile Value Proposition -->
+                  <div class="bg-[#0a0e1a]/40 rounded-xl border border-[#38BDF8]/10 p-4 md:p-6 max-w-2xl">
+                    <h3 class="text-base md:text-lg font-semibold text-[#38BDF8] mb-3 md:mb-4">What You'll Get:</h3>
+                    <ul class="space-y-2 md:space-y-3 text-sm md:text-base text-[#c9d1d9]">
+                      <li class="flex items-start gap-3">
+                        <div class="w-1.5 h-1.5 bg-[#38BDF8] rounded-full mt-2 flex-shrink-0"></div>
+                        <span>Strategic AI frameworks from Fortune 500 implementations</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <div class="w-1.5 h-1.5 bg-[#38BDF8] rounded-full mt-2 flex-shrink-0"></div>
+                        <span>Executive briefings on emerging AI trends and impacts</span>
+                      </li>
+                      <li class="flex items-start gap-3">
+                        <div class="w-1.5 h-1.5 bg-[#38BDF8] rounded-full mt-2 flex-shrink-0"></div>
+                        <span>Actionable intelligence for competitive advantage</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <!-- Mobile Trust Indicators -->
+                <div class="flex flex-wrap items-center gap-4 md:gap-6 lg:gap-8 pt-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span class="text-[#8b949e] text-sm font-medium">Weekly Strategic Insights</span>
+                  </div>
+                  
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span class="text-[#8b949e] text-sm font-medium">Privacy Protected</span>
+                  </div>
+                  
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span class="text-[#8b949e] text-sm font-medium">Unsubscribe Anytime</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Mobile Conversion Focus (30%) -->
+              <div class="lg:col-span-3">
+                <div class="bg-[#0a0e1a]/60 backdrop-blur-sm rounded-2xl border border-[#38BDF8]/20 p-6 md:p-8 space-y-4 md:space-y-6">
+                  <div class="text-center space-y-3 md:space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 md:px-4 py-2 bg-[#38BDF8]/10 rounded-full">
+                      <div class="w-2 h-2 bg-[#38BDF8] rounded-full"></div>
+                      <span class="text-[#38BDF8] text-sm font-semibold">Join 15,000+ Leaders</span>
+                    </div>
+                    
+                    <h3 class="text-lg md:text-xl lg:text-[22px] font-bold text-white leading-tight" style="letter-spacing: -0.01em;">
+                      Start receiving strategic insights
+                    </h3>
+                  </div>
+                  
+                  <!-- Premium subscription component -->
+                  <SubstackCard />
+                  
+                  <!-- Social proof -->
+                  <div class="text-center pt-4 border-t border-white/10">
+                    <p class="text-[#8b949e] text-xs">
+                      "The most actionable AI newsletter for executives."
+                    </p>
+                    <p class="text-[#38BDF8] text-xs font-medium mt-1">
+                      — Fortune 500 CTO
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  </main>
-</Layout>
+
+    <!-- ABOUT: Mobile Premium Brand Presentation -->
+    <section id="about" class="py-16 md:py-24 lg:py-32 relative">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-5xl mx-auto">
+          <!-- Mobile-First Asymmetrical Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+            
+            <!-- Left: Mobile Premium Brand Story (70%) -->
+            <div class="lg:col-span-8 space-y-6 md:space-y-8">
+              <div class="space-y-4 md:space-y-6">
+                <div class="inline-flex items-center gap-3 mb-4">
+                  <div class="w-8 md:w-12 h-px bg-[#38BDF8]"></div>
+                  <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-wider">About Nate</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  Clarity in complexity.<br>
+                  Strategy in chaos.
+                </h2>
+              </div>
+              
+              <div class="space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl text-[#c9d1d9] leading-relaxed">
+                <p>
+                  I help leaders cut through AI hype and build sustainable competitive advantages. 
+                  Former product executive, current strategic advisor to companies navigating the AI transformation.
+                </p>
+                <p class="text-[#8b949e]">
+                  My frameworks focus on practical implementation over theoretical possibilities. 
+                  Real results for teams who demand substance over buzzwords.
+                </p>
+              </div>
+              
+              <!-- Mobile Premium CTA -->
+              <div class="pt-6 md:pt-8">
+                <a 
+                  href="/about"
+                  class="inline-flex items-center gap-3 text-[#38BDF8] text-base md:text-lg font-semibold hover:text-[#7DD3FC] transition-colors duration-200"
+                >
+                  Learn more about my work
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Right: Mobile Sophisticated Element (30%) -->
+            <div class="lg:col-span-4 flex justify-center">
+              <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-[#1a202c] to-[#161b22] border border-[#38BDF8]/20 flex items-center justify-center">
+                <div class="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[#38BDF8]/20 border border-[#38BDF8]/40 flex items-center justify-center">
+                  <div class="w-5 h-5 md:w-6 md:h-6 bg-[#38BDF8] rounded-lg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL BIOGRAPHY: Comprehensive Professional Background -->
+    <section class="py-16 md:py-24 lg:py-32 relative bg-gradient-to-b from-[#0a0e1a] to-[#0f1419]">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+          
+          <!-- Section Header -->
+          <div class="text-center mb-12 md:mb-16">
+            <div class="inline-flex items-center gap-4 mb-6 md:mb-8">
+              <div class="w-12 md:w-20 h-px bg-gradient-to-r from-transparent via-[#38BDF8] to-[#38BDF8]/60"></div>
+              <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-[0.12em]">Full Biography</span>
+              <div class="w-12 md:w-20 h-px bg-gradient-to-l from-transparent via-[#38BDF8] to-[#38BDF8]/60"></div>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Nate Jones Biography
+            </h2>
+          </div>
+
+          <!-- Comprehensive Biography Content -->
+          <div class="prose prose-lg prose-invert max-w-none">
+            <div class="space-y-6 md:space-y-8 text-base md:text-lg lg:text-xl text-[#c9d1d9] leading-relaxed">
+              
+              <p>
+                <strong class="text-white">Nate B. Jones</strong> is an AI–first product strategist and former <strong class="text-[#38BDF8]">Head of Product for Amazon Prime Video</strong>, where he guided global roadmap, data infrastructure, and customer-experience innovation for artwork that reached more than 200 million viewers. His tenure at Amazon spanned machine-learning personalization, scalable content-delivery architecture, and the launch of interactive formats—initiatives that required tight orchestration across studio, engineering, and commercial teams and delivered measurable lifts in engagement and time-watched.
+              </p>
+
+              <p>
+                Prior to Amazon, Nate <strong class="text-[#38BDF8]">founded and bootstrapped his own e-commerce business</strong>, steering it from concept to product-market fit, raising capital along the way, and building a cross-functional team obsessed with customer outcomes. That hands-on founder experience still informs his bias toward scrappy experimentation, rapid iteration, and disciplined unit economics.
+              </p>
+
+              <p>
+                Since leaving Amazon, Nate has <strong class="text-[#38BDF8]">advised CXOs and product leaders at Fortune 500 enterprises</strong>, growth-stage scale-ups, and global banks on how to translate today's large-language-model breakthroughs into revenue, efficiency, and a durable competitive edge. His counsel blends deep operational rigor with a candid assessment of distribution economics—helping executive teams cut through hype, de-risk adoption, and ship AI-powered products that customers actually use.
+              </p>
+
+              <p>
+                Outside client engagements, Nate is a <strong class="text-[#38BDF8]">prolific educator and commentator</strong>. More than <strong class="text-white">250,000 professionals follow his daily AI briefings on TikTok</strong>; his Substack essays are regular reading for boards and innovation chiefs; and his Maven cohort on applied AI has up-skilled leadership teams at global brands. Audiences value his straight-talking, data-backed perspective and his knack for rendering complex technology immediately actionable.
+              </p>
+
+            </div>
+
+            <!-- Professional Highlights -->
+            <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              
+              <!-- Amazon Achievement -->
+              <div class="bg-[#161b22]/60 rounded-xl border border-[#38BDF8]/10 p-6 md:p-8">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-bold text-white">Amazon Prime Video</h3>
+                  <p class="text-sm md:text-base text-[#8b949e] leading-relaxed">
+                    Head of Product serving 200+ million viewers with ML personalization and scalable content delivery
+                  </p>
+                </div>
+              </div>
+
+              <!-- Founder Experience -->
+              <div class="bg-[#161b22]/60 rounded-xl border border-[#38BDF8]/10 p-6 md:p-8">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-bold text-white">Founder & Entrepreneur</h3>
+                  <p class="text-sm md:text-base text-[#8b949e] leading-relaxed">
+                    Built e-commerce business from concept to product-market fit with disciplined unit economics
+                  </p>
+                </div>
+              </div>
+
+              <!-- Thought Leadership -->
+              <div class="bg-[#161b22]/60 rounded-xl border border-[#38BDF8]/10 p-6 md:p-8">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-bold text-white">Global Educator</h3>
+                  <p class="text-sm md:text-base text-[#8b949e] leading-relaxed">
+                    250K+ followers across platforms with actionable AI insights for executive leadership
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER: Mobile Premium Brand Closure -->
+    <footer class="relative py-16 md:py-24 lg:py-32 bg-[#0a0e1a]">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <!-- Mobile Premium Logo Centering -->
+        <div class="text-center mb-12 md:mb-16">
+          <a href="/" class="inline-flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#38BDF8] to-[#7DD3FC] flex items-center justify-center">
+              <svg class="w-6 h-6 text-[#0a0e1a]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l9.5 7H15v13H9V9H2.5L12 2z"></path>
+              </svg>
+            </div>
+            <span class="text-2xl md:text-3xl font-extrabold text-white ml-3">
+              Nate's Signals
+            </span>
+          </a>
+        </div>
+        
+        <!-- Mobile Footer Navigation -->
+        <div class="flex flex-col md:flex-row md:justify-between text-center md:text-left">
+          <div class="space-y-4 mb-8 md:mb-0">
+            <a href="#latest-insights" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">Latest Insights</a>
+            <a href="#essential-reading" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">Essential Reading</a>
+            <a href="#toolkit" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">AI Toolkit</a>
+            <a href="#newsletter" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">Newsletter</a>
+          </div>
+          
+          <div class="space-y-4">
+            <a href="/about" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">About Nate</a>
+            <a href="/contact" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">Contact</a>
+            <a href="/privacy" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">Privacy Policy</a>
+            <a href="/terms" class="text-[#c9d1d9] hover:text-[#38BDF8] transition-colors duration-200">Terms of Service</a>
+          </div>
+        </div>
+        
+        <!-- Mobile Social Media Links -->
+        <div class="mt-8">
+          <div class="flex justify-center gap-6">
+            <a href="https://twitter.com/natebjones" target="_blank" rel="noopener noreferrer" class="text-[#38BDF8] hover:text-[#7DD3FC] transition-colors duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.643 4.937a10.97 10.97 0 01-3.128.855 4.48 4.48 0 001.963-2.475 9.034 9.034 0 01-2.827 1.078 4.48 4.48 0 00-7.618 4.08A12.74 12.74 0 011.671 3.149a4.48 4.48 0 001.384 5.973 4.467 4.467 0 01-2.033-.56v.057a4.48 4

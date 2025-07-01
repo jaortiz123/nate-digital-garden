@@ -1,7 +1,51 @@
 ---
 // src/components/SectionHeading.astro
+interface Props {
+  class?: string;
+  level?: 'sm' | 'md' | 'lg' | 'xl';
+  align?: 'left' | 'center' | 'right';
+}
+
+const { 
+  class: className = '', 
+  level = 'md',
+  align = 'center'
+} = Astro.props;
+
+// Typography scale following design system
+const levelClasses = {
+  sm: 'headline-sm',      // 28px
+  md: 'headline-md',      // 35px
+  lg: 'headline-lg',      // 44px
+  xl: 'headline-xl',      // 55px
+};
+
+const alignClasses = {
+  left: 'text-left',
+  center: 'text-center',
+  right: 'text-right',
+};
+
+// Sophisticated underline accent
+const underlineClasses = {
+  left: 'left-0',
+  center: 'left-1/2 transform -translate-x-1/2',
+  right: 'right-0',
+};
 ---
-<h2 class="relative inline-block font-grotesk font-black uppercase text-5xl md:text-6xl tracking-tight mb-12 mt-24">
-  <slot />
-  <span class="absolute -bottom-4 left-0 block h-2 w-24 bg-cyan-300"></span>
+
+<h2 class:list={[
+  levelClasses[level],
+  alignClasses[align],
+  'mb-8 tracking-tight',
+  className
+]}>
+  <span class="relative inline-block">
+    <slot />
+    <!-- Sophisticated accent underline -->
+    <div class:list={[
+      'absolute bottom-0 w-12 h-0.5 bg-gradient-to-r from-accent-primary to-accent-secondary mt-2',
+      underlineClasses[align]
+    ]}></div>
+  </span>
 </h2>

@@ -1,30 +1,182 @@
 ---
 // src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 
-const siteTitle = "About Nate B. Jones";
+const siteTitle = "About Nate B. Jones - AI Strategy & Product Leadership";
 ---
 <Layout title={siteTitle}>
   <main>
-    <section class="hero-section">
-      <div class="container mx-auto text-center">
-        <h1 class="hero-title font-geograph-black text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mx-auto max-w-4xl">
-          About Nate B. Jones
-        </h1>
-        <p class="mt-6 text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto">
-          Product leader, AI builder, and essayist. I help teams and individuals navigate ambiguity and leverage AI to build better products, faster.
-        </p>
-      </div>
-    </section>
-    <section class="py-20">
-      <div class="container mx-auto text-center">
-        <SectionHeading>Bio</SectionHeading>
-        <div class="card card-editorial max-w-3xl mx-auto">
-          <p class="text-secondary leading-relaxed mb-6">Nate has shipped products for 100M+ users at Amazon and Drift. He writes about AI, product strategy, and building high-performance teams. His work focuses on actionable frameworks and real-world results.</p>
-          <p class="text-secondary leading-relaxed">He is available for speaking, workshops, and consulting. <a href="mailto:nate@example.com" class="text-cyan-400 font-bold">Get in touch →</a></p>
+    <!-- ABOUT HERO: Mobile Premium Brand Presentation -->
+    <section class="py-16 md:py-24 lg:py-32 relative bg-gradient-to-br from-[#0f1419] via-[#0a0e1a] to-[#0f1419]">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-5xl mx-auto">
+          <!-- Mobile-First Asymmetrical Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+            
+            <!-- Left: Mobile Premium Brand Story (70%) -->
+            <div class="lg:col-span-8 space-y-6 md:space-y-8">
+              <div class="space-y-4 md:space-y-6">
+                <div class="inline-flex items-center gap-3 mb-4">
+                  <div class="w-8 md:w-12 h-px bg-[#38BDF8]"></div>
+                  <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-wider">About Nate</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  Clarity in complexity.<br>
+                  Strategy in chaos.
+                </h1>
+              </div>
+              
+              <div class="space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl text-[#c9d1d9] leading-relaxed">
+                <p>
+                  I help leaders cut through AI hype and build sustainable competitive advantages. 
+                  Former product executive, current strategic advisor to companies navigating the AI transformation.
+                </p>
+                <p class="text-[#8b949e]">
+                  My frameworks focus on practical implementation over theoretical possibilities. 
+                  Real results for teams who demand substance over buzzwords.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Right: Mobile Sophisticated Element (30%) -->
+            <div class="lg:col-span-4 flex justify-center">
+              <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-[#1a202c] to-[#161b22] border border-[#38BDF8]/20 flex items-center justify-center">
+                <div class="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[#38BDF8]/20 border border-[#38BDF8]/40 flex items-center justify-center">
+                  <div class="w-5 h-5 md:w-6 md:h-6 bg-[#38BDF8] rounded-lg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- FULL BIOGRAPHY: Comprehensive Professional Background -->
+    <section class="py-16 md:py-24 lg:py-32 relative bg-gradient-to-b from-[#0a0e1a] to-[#0f1419]">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto">
+          
+          <!-- Section Header -->
+          <div class="text-center mb-12 md:mb-16">
+            <div class="inline-flex items-center gap-4 mb-6 md:mb-8">
+              <div class="w-12 md:w-20 h-px bg-gradient-to-r from-transparent via-[#38BDF8] to-[#38BDF8]/60"></div>
+              <span class="text-[#38BDF8] text-sm md:text-base font-semibold uppercase tracking-[0.12em]">Full Biography</span>
+              <div class="w-12 md:w-20 h-px bg-gradient-to-l from-transparent via-[#38BDF8] to-[#38BDF8]/60"></div>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Professional Background
+            </h2>
+          </div>
+
+          <!-- Comprehensive Biography Content -->
+          <div class="prose prose-lg prose-invert max-w-none">
+            <div class="space-y-6 md:space-y-8 text-base md:text-lg lg:text-xl text-[#c9d1d9] leading-relaxed">
+              
+              <p>
+                <strong class="text-white">Nate B. Jones</strong> is an AI–first product strategist and former <strong class="text-[#38BDF8]">Head of Product for Amazon Prime Video</strong>, where he guided global roadmap, data infrastructure, and customer-experience innovation for artwork that reached more than 200 million viewers. His tenure at Amazon spanned machine-learning personalization, scalable content-delivery architecture, and the launch of interactive formats—initiatives that required tight orchestration across studio, engineering, and commercial teams and delivered measurable lifts in engagement and time-watched.
+              </p>
+
+              <p>
+                Prior to Amazon, Nate <strong class="text-[#38BDF8]">founded and bootstrapped his own e-commerce business</strong>, steering it from concept to product-market fit, raising capital along the way, and building a cross-functional team obsessed with customer outcomes. That hands-on founder experience still informs his bias toward scrappy experimentation, rapid iteration, and disciplined unit economics.
+              </p>
+
+              <p>
+                Since leaving Amazon, Nate has <strong class="text-[#38BDF8]">advised CXOs and product leaders at Fortune 500 enterprises</strong>, growth-stage scale-ups, and global banks on how to translate today's large-language-model breakthroughs into revenue, efficiency, and a durable competitive edge. His counsel blends deep operational rigor with a candid assessment of distribution economics—helping executive teams cut through hype, de-risk adoption, and ship AI-powered products that customers actually use.
+              </p>
+
+              <p>
+                Outside client engagements, Nate is a <strong class="text-[#38BDF8]">prolific educator and commentator</strong>. More than <strong class="text-white">250,000 professionals follow his daily AI briefings on TikTok</strong>; his Substack essays are regular reading for boards and innovation chiefs; and his Maven cohort on applied AI has up-skilled leadership teams at global brands. Audiences value his straight-talking, data-backed perspective and his knack for rendering complex technology immediately actionable.
+              </p>
+
+            </div>
+
+            <!-- Professional Highlights -->
+            <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              
+              <!-- Amazon Achievement -->
+              <div class="bg-[#161b22]/60 rounded-xl border border-[#38BDF8]/10 p-6 md:p-8">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-bold text-white">Amazon Prime Video</h3>
+                  <p class="text-sm md:text-base text-[#8b949e] leading-relaxed">
+                    Head of Product serving 200+ million viewers with ML personalization and scalable content delivery
+                  </p>
+                </div>
+              </div>
+
+              <!-- Founder Experience -->
+              <div class="bg-[#161b22]/60 rounded-xl border border-[#38BDF8]/10 p-6 md:p-8">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-bold text-white">Founder & Entrepreneur</h3>
+                  <p class="text-sm md:text-base text-[#8b949e] leading-relaxed">
+                    Built e-commerce business from concept to product-market fit with disciplined unit economics
+                  </p>
+                </div>
+              </div>
+
+              <!-- Thought Leadership -->
+              <div class="bg-[#161b22]/60 rounded-xl border border-[#38BDF8]/10 p-6 md:p-8">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 bg-[#38BDF8]/20 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-[#38BDF8]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-bold text-white">Global Educator</h3>
+                  <p class="text-sm md:text-base text-[#8b949e] leading-relaxed">
+                    250K+ followers across platforms with actionable AI insights for executive leadership
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-16 md:py-24 lg:py-32 relative bg-gradient-to-br from-[#0f1419] via-[#0a0e1a] to-[#0f1419]">
+      <div class="max-w-[90rem] mx-auto px-6 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto text-center">
+          
+          <div class="space-y-6 md:space-y-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              Let's work together
+            </h2>
+            
+            <p class="text-lg md:text-xl text-[#c9d1d9] leading-relaxed max-w-2xl mx-auto">
+              Available for speaking, workshops, and strategic consulting. 
+              Let's discuss how to navigate your AI transformation.
+            </p>
+            
+            <div class="pt-8">
+              <a 
+                href="mailto:nate@example.com"
+                class="inline-flex items-center gap-3 bg-[#38BDF8] text-[#0a0e1a] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-[#7DD3FC] hover:transform hover:-translate-y-1"
+              >
+                Get in touch
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
   </main>
 </Layout>
