@@ -3,6 +3,71 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    // Mathematical 8pt spacing scale - foundation for sophisticated layouts
+    spacing: {
+      'px': '1px',
+      '0': '0px',
+      '0.5': '2px',   // 0.25 * 8px
+      '1': '4px',     // 0.5 * 8px
+      '1.5': '6px',   // 0.75 * 8px
+      '2': '8px',     // Base unit
+      '2.5': '10px',  // 1.25 * 8px
+      '3': '12px',    // 1.5 * 8px
+      '3.5': '14px',  // 1.75 * 8px
+      '4': '16px',    // 2 * 8px
+      '5': '20px',    // 2.5 * 8px
+      '6': '24px',    // 3 * 8px
+      '7': '28px',    // 3.5 * 8px
+      '8': '32px',    // 4 * 8px
+      '9': '36px',    // 4.5 * 8px
+      '10': '40px',   // 5 * 8px
+      '11': '44px',   // 5.5 * 8px
+      '12': '48px',   // 6 * 8px
+      '14': '56px',   // 7 * 8px
+      '16': '64px',   // 8 * 8px
+      '20': '80px',   // 10 * 8px
+      '24': '96px',   // 12 * 8px
+      '28': '112px',  // 14 * 8px
+      '32': '128px',  // 16 * 8px
+      '36': '144px',  // 18 * 8px
+      '40': '160px',  // 20 * 8px
+      '44': '176px',  // 22 * 8px
+      '48': '192px',  // 24 * 8px
+      '52': '208px',  // 26 * 8px
+      '56': '224px',  // 28 * 8px
+      '60': '240px',  // 30 * 8px
+      '64': '256px',  // 32 * 8px
+      '72': '288px',  // 36 * 8px
+      '80': '320px',  // 40 * 8px
+      '96': '384px',  // 48 * 8px
+    },
+    
+    // Sophisticated typography scale using Major Third (1.25) ratio
+    fontSize: {
+      'xs': ['12px', { lineHeight: '16px', letterSpacing: '0.025em' }],
+      'sm': ['14px', { lineHeight: '20px', letterSpacing: '0.01em' }],
+      'base': ['16px', { lineHeight: '24px', letterSpacing: '0' }],
+      'lg': ['18px', { lineHeight: '28px', letterSpacing: '0' }],
+      'xl': ['20px', { lineHeight: '32px', letterSpacing: '-0.01em' }],
+      '2xl': ['24px', { lineHeight: '36px', letterSpacing: '-0.015em' }],
+      '3xl': ['30px', { lineHeight: '40px', letterSpacing: '-0.02em' }],
+      '4xl': ['36px', { lineHeight: '44px', letterSpacing: '-0.025em' }],
+      '5xl': ['48px', { lineHeight: '56px', letterSpacing: '-0.03em' }],
+      '6xl': ['60px', { lineHeight: '68px', letterSpacing: '-0.035em' }],
+      '7xl': ['72px', { lineHeight: '80px', letterSpacing: '-0.04em' }],
+      '8xl': ['96px', { lineHeight: '104px', letterSpacing: '-0.045em' }],
+      '9xl': ['128px', { lineHeight: '136px', letterSpacing: '-0.05em' }],
+      
+      // Semantic typography hierarchy
+      'display': ['72px', { lineHeight: '80px', letterSpacing: '-0.04em', fontWeight: '800' }],
+      'hero': ['60px', { lineHeight: '68px', letterSpacing: '-0.035em', fontWeight: '700' }],
+      'headline': ['36px', { lineHeight: '44px', letterSpacing: '-0.025em', fontWeight: '600' }],
+      'title': ['24px', { lineHeight: '32px', letterSpacing: '-0.015em', fontWeight: '600' }],
+      'body': ['16px', { lineHeight: '24px', letterSpacing: '0', fontWeight: '400' }],
+      'caption': ['14px', { lineHeight: '20px', letterSpacing: '0.01em', fontWeight: '400' }],
+      'overline': ['12px', { lineHeight: '16px', letterSpacing: '0.1em', fontWeight: '500', textTransform: 'uppercase' }],
+    },
+    
     extend: {
       colors: {
         // Premium dark palette

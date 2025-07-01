@@ -320,6 +320,100 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(56, 189, 248, 0.1);
 }
 
+/* Performance-Optimized Featured Card Components */
+.featured-badge {
+  background: linear-gradient(90deg, #38BDF8, #7DD3FC);
+  color: #0a0e1a;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+  will-change: transform;
+}
+
+.featured-card {
+  position: relative;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #1a202c 0%, #161b22 40%, #1a202c 100%);
+  border: 2px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.featured-card:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.primary-cta {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #38BDF8;
+  color: #0a0e1a;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  height: 3.5rem;
+  font-size: 1.125rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.primary-cta:hover {
+  background-color: #7DD3FC;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -10px rgba(56, 189, 248, 0.3);
+}
+
+.secondary-cta {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 2px solid rgba(56, 189, 248, 0.2);
+  color: #c9d1d9;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  height: 3rem;
+  font-size: 1rem;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.secondary-cta:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+.tag-pill {
+  padding: 0.5rem 1rem;
+  background-color: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 0.5rem;
+  color: #38BDF8;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Color System - Semantic and Strategic */
+.bg-primary { background-color: #38BDF8; }
+.bg-primary-hover { background-color: #7DD3FC; }
+.bg-primary-active { background-color: #0EA5E9; }
+
+.text-primary { color: #38BDF8; }
+.text-primary-hover { color: #7DD3FC; }
+.text-primary-active { color: #0EA5E9; }
+
 /* 8pt Grid Spacing System */
 .space-8 { margin: 8px; }
 .space-16 { margin: 16px; }

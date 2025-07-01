@@ -24,24 +24,24 @@ import Button from './Button.astro';
         </div>
         
         <!-- Hero title with sophisticated typography hierarchy -->
-        <h1 class="text-6xl lg:text-8xl xl:text-9xl font-bold text-content-primary leading-[0.9] tracking-tight">
+        <h1 class="text-hero lg:text-display font-bold text-content-primary leading-none">
           <span class="relative inline-block">
             <span class="relative z-10">The Signal.</span>
             <!-- Custom underline accent -->
-            <div class="absolute bottom-2 left-0 w-full h-4 lg:h-6 bg-gradient-to-r from-accent-primary/30 to-accent-secondary/30 -rotate-1 rounded-sm"></div>
+            <div class="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-accent-primary/20 to-accent-secondary/20 -rotate-1 rounded-sm"></div>
           </span>
           <br/>
-          <span class="text-content-secondary bg-gradient-to-r from-content-secondary to-content-tertiary bg-clip-text text-transparent">Not the Noise.</span>
+          <span class="text-content-secondary">Not the Noise.</span>
         </h1>
         
         <!-- Primary value proposition with hierarchy -->
         <div class="space-y-6 max-w-2xl">
-          <p class="text-2xl lg:text-3xl text-content-secondary font-medium leading-relaxed tracking-tight">
-            Strategic AI insights for people who demand<br/>
-            <span class="text-white font-black">substance over hype.</span>
+          <p class="text-xl lg:text-2xl text-content-secondary font-medium leading-relaxed">
+            Strategic AI insights for people who demand 
+            <span class="text-content-primary font-semibold">substance over hype.</span>
           </p>
           
-          <p class="text-xl text-content-tertiary leading-relaxed font-light">
+          <p class="text-lg text-content-tertiary leading-relaxed">
             Real frameworks. Measurable results. From someone who's built products for 100M+ users.
           </p>
         </div>
@@ -58,14 +58,14 @@ import Button from './Button.astro';
         
         <!-- CTA section with sophisticated button treatment -->
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <Button href="#newsletter" variant="primary" size="lg" class="group transform hover:scale-105 shadow-2xl shadow-accent-primary/25">
+          <Button href="#newsletter" variant="primary" size="lg" class="group">
             <span>Read Premium Insights</span>
             <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </Button>
           
-          <Button href="#essays" variant="secondary" size="lg" class="hover:scale-105 transform transition-transform">
+          <Button href="#essays" variant="secondary" size="lg">
             Browse Framework Library
           </Button>
         </div>
