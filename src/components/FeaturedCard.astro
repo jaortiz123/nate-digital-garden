@@ -6,6 +6,7 @@ interface Props {
   description: string;
   date?: string;
   readTime?: string;
+  imageUrl?: string;
 }
 
 const { 
@@ -13,7 +14,8 @@ const {
   title, 
   description, 
   date = "Dec 15, 2024", 
-  readTime = "8 min read" 
+  readTime = "8 min read",
+  imageUrl
 } = Astro.props;
 ---
 
@@ -45,6 +47,18 @@ const {
       <p class="body-lg text-content-secondary leading-relaxed">
         {description.length > 200 ? description.substring(0, 200) + '...' : description}
       </p>
+      
+      <!-- Premium image display -->
+      {imageUrl && (
+        <div class="rounded-xl overflow-hidden border border-white/10 shadow-lg group-hover:shadow-xl transition-all duration-300">
+          <img 
+            src={imageUrl} 
+            alt={title}
+            class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </div>
+      )}
       
       <!-- Sophisticated footer with premium CTA -->
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-white/10">

@@ -28,6 +28,8 @@ const supportingPosts = posts.slice(1, 5); // Get next 4 posts
         title={featuredPost.title}
         description={featuredPost.description}
         postUrl={featuredPost.postUrl}
+        date={featuredPost.date}
+        imageUrl={featuredPost.imageUrl}
       />
 
       <!-- Supporting Posts -->
@@ -43,6 +45,8 @@ const supportingPosts = posts.slice(1, 5); // Get next 4 posts
                 title={post.title}
                 description={post.description}
                 postUrl={post.postUrl}
+                date={post.date}
+                imageUrl={post.imageUrl}
               />
             ))}
           </div>

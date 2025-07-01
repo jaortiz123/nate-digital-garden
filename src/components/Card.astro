@@ -8,6 +8,7 @@ interface Props {
   readTime?: string;
   variant?: 'default' | 'elevated' | 'featured';
   size?: 'sm' | 'md' | 'lg';
+  imageUrl?: string;
 }
 
 const { 
@@ -17,7 +18,8 @@ const {
   date = "Dec 15, 2024", 
   readTime = "8 min read",
   variant = 'default',
-  size = 'md'
+  size = 'md',
+  imageUrl
 } = Astro.props;
 
 // Sophisticated base classes with premium interactions
@@ -79,6 +81,18 @@ const paddingClasses = {
       <p class="text-body text-content-secondary leading-relaxed flex-grow">
         {description}
       </p>
+      
+      <!-- Temporarily disabled image display until URL issues are resolved -->
+      <!-- {imageUrl && (
+        <div class="rounded-lg overflow-hidden border border-white/5 shadow-md group-hover:shadow-lg transition-all duration-300">
+          <img 
+            src={imageUrl} 
+            alt={title}
+            class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </div>
+      )} -->
       
       <!-- Sophisticated footer with visual cue -->
       <div class="flex items-center justify-between pt-6 mt-auto border-t border-content-quaternary/20">
