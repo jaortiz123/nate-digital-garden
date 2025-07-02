@@ -16,22 +16,22 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
-    <header style="max-width: 80rem; margin: 0 auto; padding: 1.5rem 1rem;">
-      <nav style="display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" style="font-family: 'Orbitron', sans-serif; color: var(--electric-blue); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; text-decoration: none;">Nate B. Jones</a>
-        <div style="display: flex; gap: 2rem; font-size: 0.9rem; font-weight: 600; text-transform: uppercase;">
-          <a href="/essays" style="color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Essays</a>
-          <a href="/about" style="color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">About</a>
-          <a href="/projects" style="color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease;">Projects</a>
+  <body class="bg-navy text-fg">
+    <header class="max-w-full mx-auto px-4 py-6">
+      <nav class="flex justify-between items-center">
+        <a href="/" class="font-sans text-cyan-400 text-xl font-bold uppercase no-underline">Nate B. Jones</a>
+        <div class="flex gap-8 text-sm font-semibold uppercase">
+          <a href="/essays" class="text-fg-muted no-underline transition-all duration-300 ease-in-out hover:text-cyan-400">Essays</a>
+          <a href="/about" class="text-fg-muted no-underline transition-all duration-300 ease-in-out hover:text-cyan-400">About</a>
+          <a href="/projects" class="text-fg-muted no-underline transition-all duration-300 ease-in-out hover:text-cyan-400">Projects</a>
         </div>
       </nav>
     </header>
     <main>
       <slot />
     </main>
-    <footer style="text-align: center; padding: 2rem 0; margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-      <p style="font-size: 0.75rem; color: var(--text-secondary);">© {new Date().getFullYear()} Nate B. Jones. All rights reserved.</p>
+    <footer class="text-center py-8 mt-16 border-t border-border-subtle">
+      <p class="text-xs text-fg-muted">© {new Date().getFullYear()} Nate B. Jones. All rights reserved.</p>
     </footer>
   </body>
 </html>

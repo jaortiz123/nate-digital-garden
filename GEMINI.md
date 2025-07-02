@@ -38,3 +38,6 @@ This is a [Astro](https://astro.build/) project using [Tailwind CSS](https://tai
 - When adding new pages, create a new `.astro` file in the `src/pages` directory.
 - Use Tailwind CSS classes for all styling. Refer to `tailwind.config.mjs` for custom theme values (e.g., `bg-navy`, `text-fg`).
 - Use the `@` path alias for imports.
+- **TODO:** Replace the placeholder email address in `src/pages/about.astro` with your actual email address.
+- **TODO:** Replace the placeholder project URLs in `src/pages/projects.astro` with the actual project URLs.
+- **TODO:** Replace the placeholder Stripe links in the `src/pages/toolkit` directory with your actual Stripe links.
