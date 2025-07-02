@@ -332,6 +332,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
   box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
   will-change: transform;
+  /* Responsive positioning for badge */
+  position: relative;
+  display: inline-block;
 }
 
 .featured-card {
@@ -504,230 +507,6 @@ img, svg {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
-
-/* Typography System - Mathematical Scale (1.25 Major Third) */
-.text-system {
-  /* Headlines - Inter Display with sophisticated letter spacing */
-  --headline-font: 'Inter Display', 'Inter', sans-serif;
-  --headline-weight: 600;
-  --headline-tracking: -0.02em;
-  
-  /* Body text - Inter with perfect readability */
-  --body-font: 'Inter', sans-serif;
-  --body-weight: 400;
-  --body-tracking: 0;
-  
-  /* UI text - smaller, tighter tracking */
-  --ui-font: 'Inter', sans-serif;
-  --ui-weight: 500;
-  --ui-tracking: 0.01em;
-}
-
-/* Sophisticated Typography Components */
-@layer components {
-  /* Headline System */
-  .headline-hero {
-    font-family: var(--headline-font);
-    font-size: 69px;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
-    @apply text-content-primary;
-  }
-  
-  .headline-xl {
-    font-family: var(--headline-font);
-    font-size: 55px;
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    @apply text-content-primary;
-  }
-  
-  .headline-lg {
-    font-family: var(--headline-font);
-    font-size: 44px;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    @apply text-content-primary;
-  }
-  
-  .headline-md {
-    font-family: var(--headline-font);
-    font-size: 35px;
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.015em;
-    @apply text-content-primary;
-  }
-  
-  .headline-sm {
-    font-family: var(--headline-font);
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
-    @apply text-content-primary;
-  }
-  
-  /* Body Text System */
-  .body-lg {
-    font-family: var(--body-font);
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0;
-    @apply text-content-primary;
-  }
-  
-  .body-base {
-    font-family: var(--body-font);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0;
-    @apply text-content-primary;
-  }
-  
-  .body-sm {
-    font-family: var(--body-font);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0;
-    @apply text-content-secondary;
-  }
-  
-  /* UI Text System */
-  .ui-text {
-    font-family: var(--ui-font);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
-    @apply text-content-tertiary;
-  }
-  
-  /* Sophisticated Link Treatment */
-  .link-primary {
-    @apply text-accent-primary hover:text-accent-secondary;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
-    transition: all 200ms ease;
-  }
-  
-  .link-primary:hover {
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-  }
-  
-  /* Premium Button Base */
-  .btn-base {
-    @apply inline-flex items-center justify-center font-medium tracking-tight;
-    @apply transition-all duration-200 focus-visible:outline-none;
-    @apply focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2;
-    @apply focus-visible:ring-offset-surface-primary disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-  
-  /* Sophisticated Card System */
-  .card-base {
-    @apply bg-surface-secondary rounded-xl border border-white/5;
-    @apply shadow-card hover:shadow-card-hover transition-all duration-300;
-  }
-  
-  .card-elevated {
-    @apply bg-surface-tertiary rounded-xl border border-white/10;
-    @apply shadow-card-elevated hover:shadow-glow-cyan-sm transition-all duration-300;
-  }
-}
-
-/* The hero gradient, applied as a utility class */
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.05; /* Kept very subtle to not overwhelm */
-  background-image: linear-gradient(135deg, #6633ff 0%, #ff4966 100%);
-  z-index: -1;
-}
-
-@font-face {
-  font-family: 'The Future Mono Black';
-  src: url('/the-future-mono-black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-.font-future-mono {
-  font-family: 'The Future Mono Black', 'Orbitron', 'monospace', sans-serif;
-  font-weight: 900;
-}
-
-@font-face {
-  font-family: 'Test Pitch Sans Bold';
-  src: url('/test-pitch-sans-bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-.font-pitch-sans {
-  font-family: 'Test Pitch Sans Bold', 'Orbitron', 'monospace', sans-serif;
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Geograph';
-  src: url('/test-geograph-light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geograph';
-  src: url('/test-geograph-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geograph';
-  src: url('/test-geograph-medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geograph';
-  src: url('/test-geograph-bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geograph';
-  src: url('/test-geograph-black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Geograph';
-  src: url('/test-geograph-black-italic.woff2') format('woff2');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-.font-geograph-light { font-family: 'Geograph', sans-serif; font-weight: 300; }
-.font-geograph-regular { font-family: 'Geograph', sans-serif; font-weight: 400; }
-.font-geograph-medium { font-family: 'Geograph', sans-serif; font-weight: 500; }
-.font-geograph-bold { font-family: 'Geograph', sans-serif; font-weight: 700; }
-.font-geograph-black { font-family: 'Geograph', sans-serif; font-weight: 900; }
-.font-geograph-black-italic { font-family: 'Geograph', sans-serif; font-weight: 900; font-style: italic; }
 
 /* Typography System - Premium Hierarchy */
 h1, h2, h3, h4, h5, h6 {
@@ -1016,5 +795,20 @@ html {
 .crisp-edges {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
